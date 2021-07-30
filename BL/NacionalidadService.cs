@@ -8,29 +8,29 @@ using System.Threading.Tasks;
 
 namespace BL
 {
-    public interface IHorarioService
+    public interface INacionalidadService
     {
-        DBEntity Create(HorarioEntity entity);
-        DBEntity Delete(HorarioEntity entity);
-        IEnumerable<HorarioEntity> Get();
-        HorarioEntity GetById(HorarioEntity entity);
-        DBEntity Update(HorarioEntity entity);
+        DBEntity Create(NacionalidadEntity entity);
+        DBEntity Delete(NacionalidadEntity entity);
+        IEnumerable<NacionalidadEntity> Get();
+        NacionalidadEntity GetById(NacionalidadEntity entity);
+        DBEntity Update(NacionalidadEntity entity);
     }
 
-    public class HorarioService : IHorarioService
+    public class NacionalidadService : INacionalidadService
     {
         public IDataAccess sql { get; set; }
-        public HorarioService()
+        public NacionalidadService()
         {
             sql = new DataAccess();
         }
 
-        //Metódo para obtener los datos en general de Horarios
-        public IEnumerable<HorarioEntity> Get()
+        //Metódo para obtener los datos en general de Nacionalidad
+        public IEnumerable<NacionalidadEntity> Get()
         {
             try
             {
-                var result = sql.Query<HorarioEntity>("HorarioObtener");
+                var result = sql.Query<NacionalidadEntity>("NacionalidadObtener");
 
                 return result;
             }
@@ -44,13 +44,13 @@ namespace BL
         }
 
         //Metódo para obtener el detalle de un registro
-        public HorarioEntity GetById(HorarioEntity entity)
+        public NacionalidadEntity GetById(NacionalidadEntity entity)
         {
             try
             {
-                var result = sql.QueryFirst<HorarioEntity>("HorarioObtener", new
+                var result = sql.QueryFirst<NacionalidadEntity>("NacionalidadObtener", new
                 {
-                    entity.IdHorario
+                    entity.IdNacionalidad
 
                 });
 
@@ -65,16 +65,13 @@ namespace BL
         }
 
         //Metódo para crear
-        public DBEntity Create(HorarioEntity entity)
+        public DBEntity Create(NacionalidadEntity entity)
         {
             try
             {
-                var result = sql.Execute("HorarioInsertar", new
+                var result = sql.Execute("NacionalidadInsertar", new
                 {
-                    entity.Inicio,
-                    entity.Fin,
-                    entity.Estado
-
+                    entity.Nacionalidad
                 });
                 return result;
             }
@@ -87,17 +84,14 @@ namespace BL
         }
 
         //Metódo para actualizar
-        public DBEntity Update(HorarioEntity entity)
+        public DBEntity Update(NacionalidadEntity entity)
         {
             try
             {
-                var result = sql.Execute("HorarioActualizar", new
+                var result = sql.Execute("NacionalidadActualizar", new
                 {
-                    entity.IdHorario,
-                    entity.Inicio,
-                    entity.Fin,
-                    entity.Estado
-
+                    entity.IdNacionalidad,
+                    entity.Nacionalidad
                 });
                 return result;
             }
@@ -109,13 +103,15 @@ namespace BL
 
         }
 
-        public DBEntity Delete(HorarioEntity entity)
+        public DBEntity Delete(NacionalidadEntity entity)
         {
             try
             {
-                var result = sql.Execute("HorarioEliminar", new
+                var result = sql.Execute("NacionalidadEliminar", new
                 {
-                    entity.IdHorario
+                    entity.IdNacionalidad
+
+
                 });
                 return result;
             }
@@ -126,7 +122,6 @@ namespace BL
             }
 
         }
-
 
     }
 }

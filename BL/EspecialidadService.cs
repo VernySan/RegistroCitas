@@ -25,6 +25,24 @@ namespace BL
             sql = new DataAccess();
         }
 
+        //Metódo para obtener los datos en general de Especialidad
+        public IEnumerable<EspecialidadEntity> Get()
+        {
+            try
+            {
+                var result = sql.Query<EspecialidadEntity>("EspecialidadObtener");
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
         //Metódo para obtener el detalle de un registro
         public EspecialidadEntity GetById(EspecialidadEntity entity)
         {
@@ -54,7 +72,6 @@ namespace BL
                 var result = sql.Execute("EspecialidadInsertar", new
                 {
                     entity.Especialidad
-
                 });
                 return result;
             }
@@ -73,8 +90,8 @@ namespace BL
             {
                 var result = sql.Execute("EspecialidadActualizar", new
                 {
+                    entity.IdEspecialidad,
                     entity.Especialidad
-
                 });
                 return result;
             }
@@ -93,6 +110,8 @@ namespace BL
                 var result = sql.Execute("EspecialidadEliminar", new
                 {
                     entity.IdEspecialidad
+
+
                 });
                 return result;
             }
@@ -104,9 +123,5 @@ namespace BL
 
         }
 
-        public IEnumerable<EspecialidadEntity> Get()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

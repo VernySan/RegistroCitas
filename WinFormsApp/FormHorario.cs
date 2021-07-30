@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,9 @@ using Entity;
 
 namespace WinFormsApp
 {
-    public partial class FormMarcaVehiculo : Form
+    public partial class FormHorario : Form
     {
-        public FormMarcaVehiculo()
+        public FormHorario()
         {
             InitializeComponent();
         }
@@ -22,8 +23,8 @@ namespace WinFormsApp
         {
             try
             {
-                GridViewMarcaVehiculo.AutoGenerateColumns = false;
-                GridViewMarcaVehiculo.DataSource = IApp.MarcaVehiculoService.Get();
+                GridViewHorario.AutoGenerateColumns = false;
+                GridViewHorario.DataSource = IApp.HorarioService.Get();
 
             }
             catch (Exception ex)
@@ -37,13 +38,13 @@ namespace WinFormsApp
 
         public void LimpiarDatos() 
         {
-            txtDescripcion.Text = null;
-            txtMarcaVehiculoId.Text = null;
-            chckEstado.Checked = true;
-        
+            
+            txtInicio.Text = null;  
+            txtFin.Text = null;
+            txtIdHorario.Text = null;
         }
 
-        private void FormMarcaVehiculo_Load(object sender, EventArgs e)
+        private void FormHorario_Load(object sender, EventArgs e)
         {
             CargarDatos();
         }
@@ -56,10 +57,10 @@ namespace WinFormsApp
 
         public int? GetSelectedRowGrid() 
         {
-            if (GridViewMarcaVehiculo.SelectedRows.Count > 0)
+            if (GridViewHorario.SelectedRows.Count > 0)
             {
-                var row = GridViewMarcaVehiculo.SelectedRows[0];
-                return Convert.ToInt32(row.Cells["MarcaVehiculoId"].Value);
+                var row = GridViewHorario.SelectedRows[0];
+                return Convert.ToInt32(row.Cells["IdHorario"].Value);
             }
             else
             {
@@ -79,13 +80,12 @@ namespace WinFormsApp
 
                 if (IdSelected.HasValue)
                 {
-                    var result = IApp.MarcaVehiculoService.GetById(new MarcaVehiculoEntity()
-                    { MarcaVehiculoId = IdSelected });
+                    var result = IApp.HorarioService.GetById(new HorarioEntity()
+                    { IdHorario = IdSelected });
 
-                    txtMarcaVehiculoId.Text = result.MarcaVehiculoId.ToString();
-                    txtDescripcion.Text = result.Descripcion;
-                    chckEstado.Checked = result.Estado;
-
+                    txtIdHorario.Text = result.IdHorario.ToString();
+                    txtInicio.Text = result.Inicio;
+                    txtFin.Text = result.Fin;
                     panelForm.Visible = true;
                 }
                 else 
@@ -113,8 +113,8 @@ namespace WinFormsApp
 
                 if (IdSelected.HasValue)
                 {
-                    var result = IApp.MarcaVehiculoService.Delete(new MarcaVehiculoEntity()
-                    { MarcaVehiculoId = IdSelected });
+                    var result = IApp.HorarioService.Delete(new HorarioEntity()
+                    { IdHorario = IdSelected });
 
                     if (result.CodeError == 0)
                     {
@@ -143,14 +143,32 @@ namespace WinFormsApp
 
         public bool ValidacionFormulario()
         {
-            if (string.IsNullOrEmpty(txtDescripcion.Text))
+            if (string.IsNullOrEmpty(txtInicio.Text) || string.IsNullOrEmpty(txtFin.Text))
             {
-                MessageBox.Show("El campo Descripción es obligatorio");
+                MessageBox.Show("Los campos Inicio y Fin son obligatorios");
                 return false;
             }
 
+            DateTime tInicio;
+            DateTime tFin;
+            bool bInicio = DateTime.TryParse(txtInicio.Text, out tInicio);
+            bool bFin = DateTime.TryParse(txtFin.Text, out tFin);
+
+            if (!bInicio && !bFin)
+            {
+                MessageBox.Show("Las horas se deben digitar en formato HH:MM ó HH:MM AM/PM");
+                return false;
+            }
+
+            if (tInicio >= tFin)
+            {
+                MessageBox.Show("Las hora Fin debe ser mayor a la hora Incio");
+                return false;
+            }
+
+            txtInicio.Text = tInicio.ToString("hh:mm tt");
+            txtFin.Text = tFin.ToString("hh:mm tt");
             return true;       
-        
         
         }
 
@@ -160,29 +178,28 @@ namespace WinFormsApp
             {
                 if (ValidacionFormulario())
                 {
-                    var MarcaVehiculoId = string.IsNullOrEmpty(txtMarcaVehiculoId.Text)
+                    var IdHorario = string.IsNullOrEmpty(txtIdHorario.Text)
                                           ? (int?)null //Insertar
-                                          : Convert.ToInt32(txtMarcaVehiculoId.Text);//Editar
+                                          : Convert.ToInt32(txtIdHorario.Text);//Editar
 
-                    var entity = new MarcaVehiculoEntity
+                    var entity = new HorarioEntity
                     { 
-                        MarcaVehiculoId= MarcaVehiculoId,
-                        Descripcion=txtDescripcion.Text,
-                        Estado= chckEstado.Checked
-                    
+                        IdHorario = IdHorario,
+                        Inicio=txtInicio.Text,
+                        Fin=txtFin.Text
                     };
 
                     var result = new DBEntity();
-                    if (entity.MarcaVehiculoId.HasValue)
+                    if (entity.IdHorario.HasValue)
                     {
                         //Actualización
-                        result = IApp.MarcaVehiculoService.Update(entity);
+                        result = IApp.HorarioService.Update(entity);
 
                         if (result.CodeError == 0) MessageBox.Show("El registro se actualizó correctamente");
                     }
                     else
                     {
-                        result = IApp.MarcaVehiculoService.Create(entity);
+                        result = IApp.HorarioService.Create(entity);
 
                         if (result.CodeError == 0) MessageBox.Show("El registro se insertó correctamente");
 

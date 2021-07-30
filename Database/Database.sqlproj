@@ -96,6 +96,10 @@
     <Build Include="dbo\StoreProcedures\CitaEliminar.sql" />
     <Build Include="dbo\StoreProcedures\CitaInsertar.sql" />
     <Build Include="dbo\StoreProcedures\CitaObtener.sql" />
+    <Build Include="dbo\StoreProcedures\NacionalidadActualizar.sql" />
+    <Build Include="dbo\StoreProcedures\NacionalidadEliminar.sql" />
+    <Build Include="dbo\StoreProcedures\NacionalidadInsertar.sql" />
+    <Build Include="dbo\StoreProcedures\NacionalidadObtener.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Database.refactorlog" />

@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[HorarioInsertar]
-	@Inicio time(7),
-	@Fin time(7),
+	@Inicio varchar(9),
+	@Fin varchar(9),
 	@Estado bit
 
 AS BEGIN

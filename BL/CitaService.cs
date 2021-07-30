@@ -25,6 +25,24 @@ namespace BL
             sql = new DataAccess();
         }
 
+        //Metódo para obtener los datos en general de Citas
+        public IEnumerable<CitaEntity> Get()
+        {
+            try
+            {
+                var result = sql.Query<CitaEntity>("CitaObtener");
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
         //Metódo para obtener el detalle de un registro
         public CitaEntity GetById(CitaEntity entity)
         {
@@ -112,9 +130,5 @@ namespace BL
 
         }
 
-        public IEnumerable<CitaEntity> Get()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

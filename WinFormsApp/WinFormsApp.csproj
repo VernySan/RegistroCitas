@@ -15,4 +15,34 @@
     <ProjectReference Include="..\Entity\Entity.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="FormHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormNacionalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormEspecialidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="FormHorario.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormNacionalidad.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormEspecialidad.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FormServicio.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

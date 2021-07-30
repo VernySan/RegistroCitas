@@ -5,6 +5,7 @@ AS BEGIN
 	SET NOCOUNT ON
 
 	SELECT
+		IdEspecialidad,
 		Especialidad
 	FROM dbo.Especialidad
 	WHERE

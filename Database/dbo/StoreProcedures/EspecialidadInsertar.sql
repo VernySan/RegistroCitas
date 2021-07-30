@@ -1,5 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[EspecialidadInsertar]
-	@IdEspecialidad varchar(15)
+	@Especialidad varchar(50)
 
 AS BEGIN
 SET NOCOUNT ON
@@ -14,7 +14,7 @@ SET NOCOUNT ON
 		)
 		VALUES
 		(
-	      @IdEspecialidad 
+	      @Especialidad 
 		)
 
 		COMMIT TRANSACTION TRASA

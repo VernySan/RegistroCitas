@@ -25,6 +25,24 @@ namespace BL
             sql = new DataAccess();
         }
 
+        //Metódo para obtener los datos en general de Pacientes
+        public IEnumerable<PacienteEntity> Get()
+        {
+            try
+            {
+                var result = sql.Query<PacienteEntity>("PacienteObtener");
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
         //Metódo para obtener el detalle de un registro
         public PacienteEntity GetById(PacienteEntity entity)
         {
@@ -123,9 +141,6 @@ namespace BL
 
         }
 
-        public IEnumerable<PacienteEntity> Get()
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

@@ -6,6 +6,7 @@ AS BEGIN
 	SET NOCOUNT ON
 
 	SELECT
+		 IdServicio,
 		 Servicio,
 		 Procedimiento,
 		 Caracteristicas,

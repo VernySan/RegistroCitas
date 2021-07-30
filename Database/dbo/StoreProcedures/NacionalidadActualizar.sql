@@ -1,9 +1,6 @@
-﻿CREATE PROCEDURE [dbo].[HorarioActualizar]
-	@IdHorario INT,
-	@Inicio varchar(9),
-	@Fin varchar(9),
-	@Estado bit
-
+﻿CREATE PROCEDURE [dbo].[NacionalidadActualizar]
+	@IdNacionalidad INT,
+	@Nacionalidad VARCHAR(15)
 AS BEGIN
 SET NOCOUNT ON
 
@@ -11,11 +8,9 @@ SET NOCOUNT ON
 
 	BEGIN TRY
 		
-	UPDATE dbo.Horario SET
-	 Inicio=@Inicio,
-	 Fin=@Fin,
-	 Estado=@Estado
-	WHERE IdHorario=@IdHorario
+	UPDATE dbo.Nacionalidad SET
+	 Nacionalidad=@Nacionalidad
+	WHERE IdNacionalidad=@IdNacionalidad
 
 		COMMIT TRANSACTION TRASA
 		

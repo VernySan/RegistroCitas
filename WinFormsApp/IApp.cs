@@ -9,8 +9,10 @@ namespace WinFormsApp
 {
     public struct IApp
     {
-        public static IMarcaVehiculoService MarcaVehiculoService => new MarcaVehiculoService();
-        public static IVehiculoService VehiculoService => new VehiculoService();
         public static IUsuariosService UsuariosServices => new UsuarioService();
+        public static IEspecialidadService EspecialidadService => new EspecialidadService();
+        public static IServicioService ServicioService => new ServicioService();
+        public static INacionalidadService NacionalidadService => new NacionalidadService();
+        public static IHorarioService HorarioService => new HorarioService();
     }
 }

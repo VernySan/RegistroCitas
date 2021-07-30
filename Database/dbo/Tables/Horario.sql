@@ -1,8 +1,8 @@
 ﻿CREATE TABLE [dbo].[Horario]
 (
 	[IdHorario] INT IDENTITY(1,1) NOT NULL PRIMARY KEY, 
-    [Inicio] TIME NOT NULL, 
-    [Fin] TIME NOT NULL, 
+    [Inicio] VARCHAR(9) NOT NULL, 
+    [Fin] VARCHAR(9) NOT NULL, 
     [Estado] BIT NOT NULL
 )
 

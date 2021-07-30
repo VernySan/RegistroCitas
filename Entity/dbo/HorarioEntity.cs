@@ -9,7 +9,7 @@ namespace Entity
     public class HorarioEntity : EN
     {
         public int? IdHorario { get; set; }
-        public DateTime Inicio { get; set; }
-        public DateTime Fin { get; set; }
+        public string Inicio { get; set; }
+        public string Fin { get; set; }
     }
 }

@@ -25,6 +25,24 @@ namespace BL
             sql = new DataAccess();
         }
 
+        //Metódo para obtener los datos en general de Sericios
+        public IEnumerable<ServicioEntity> Get()
+        {
+            try
+            {
+                var result = sql.Query<ServicioEntity>("ServicioObtener");
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
         //Metódo para obtener el detalle de un registro
         public ServicioEntity GetById(ServicioEntity entity)
         {
@@ -76,6 +94,7 @@ namespace BL
             {
                 var result = sql.Execute("ServicioActualizar", new
                 {
+                    entity.IdServicio,
                     entity.Servicio,
                     entity.Procedimiento,
                     entity.Caracteristicas,
@@ -110,9 +129,5 @@ namespace BL
 
         }
 
-        public IEnumerable<ServicioEntity> Get()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

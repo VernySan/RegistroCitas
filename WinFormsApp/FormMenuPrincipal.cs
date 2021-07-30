@@ -44,19 +44,30 @@ namespace WinFormsApp
         
         }
 
-        private void MenuMarcaVehiculo_Click(object sender, EventArgs e)
-        {
-            AbrirFormPrincipal(new FormMarcaVehiculo());
-        }
-
-        private void itemVehiculo_Click(object sender, EventArgs e)
-        {
-            AbrirFormPrincipal(new FormVehiculo());
-        }
 
         private void FormMenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            AbrirFormPrincipal(new FormEspecialidad());
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            AbrirFormPrincipal(new FormServicio());
+        }
+
+        private void iconButton8_Click(object sender, EventArgs e)
+        {
+            AbrirFormPrincipal(new FormNacionalidad());
+        }
+
+        private void iconButton7_Click(object sender, EventArgs e)
+        {
+            AbrirFormPrincipal(new FormHorario());
         }
     }
 }
