@@ -13,6 +13,7 @@ namespace Entity
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
         public int IdEspecialidad { get; set; }
+        public string Especialidad { get;  }
         public int Telefono { get; set; }
         public string Direccion { get; set; }
     }

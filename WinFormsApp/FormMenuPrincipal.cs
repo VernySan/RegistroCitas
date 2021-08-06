@@ -69,5 +69,10 @@ namespace WinFormsApp
         {
             AbrirFormPrincipal(new FormHorario());
         }
+
+        private void bDoctores_Click(object sender, EventArgs e)
+        {
+            AbrirFormPrincipal(new FormDoctor());
+        }
     }
 }

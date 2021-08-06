@@ -5,15 +5,20 @@ AS BEGIN
 	SET NOCOUNT ON
 
 	SELECT
-	      Cedula
-	    , Nombre 
-	    , PrimerApellido
-	    , SegundoApellido 
-	    , IdEspecialidad 
-		, Telefono
-		, Direccion
-		, Estado
-	FROM dbo.Doctor
+	      a.Cedula
+	    , a.Nombre 
+	    , a.PrimerApellido
+	    , a.SegundoApellido 
+	    , a.IdEspecialidad 
+		, b.Especialidad
+		, a.Telefono
+		, a.Direccion
+		, a.Estado
+	FROM 
+	 dbo.Doctor a
+	   inner join
+	 dbo.Especialidad b
+	   on a.IdEspecialidad = b.IdEspecialidad 
 	WHERE
 	     (@Cedula IS NULL OR Cedula=@Cedula)
 

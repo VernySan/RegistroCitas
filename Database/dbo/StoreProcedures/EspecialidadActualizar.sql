@@ -1,6 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[EspecialidadActualizar]
 	@IdEspecialidad INT,
-	@Especialidad VARCHAR(15)
+	@Especialidad VARCHAR(50)
 AS BEGIN
 SET NOCOUNT ON
 

@@ -16,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FormDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormHorario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -31,6 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FormDoctor.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="FormHorario.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
