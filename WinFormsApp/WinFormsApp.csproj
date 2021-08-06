@@ -16,24 +16,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="FormDoctor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FormHorario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FormNacionalidad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FormEspecialidad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FormServicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="FormPaciente.cs" />
+    <Compile Update="FormDoctor.cs" />
+    <Compile Update="FormHorario.cs" />
+    <Compile Update="FormNacionalidad.cs" />
+    <Compile Update="FormEspecialidad.cs" />
+    <Compile Update="FormServicio.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FormPaciente.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="FormDoctor.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

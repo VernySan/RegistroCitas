@@ -74,5 +74,10 @@ namespace WinFormsApp
         {
             AbrirFormPrincipal(new FormDoctor());
         }
+
+        private void bPacientes_Click(object sender, EventArgs e)
+        {
+            AbrirFormPrincipal(new FormPaciente());
+        }
     }
 }

@@ -50,7 +50,7 @@ namespace BL
             {
                 var result = sql.QueryFirst<PacienteEntity>("PacienteObtener", new
                 {
-                    entity.Cedula
+                    entity.Pasaporte
 
                 });
 
@@ -71,6 +71,7 @@ namespace BL
             {
                 var result = sql.Execute("PacienteInsertar", new
                 {
+                    entity.Pasaporte,
                     entity.Cedula,
                     entity.Nombre,
                     entity.PrimerApellido,
@@ -101,6 +102,7 @@ namespace BL
             {
                 var result = sql.Execute("PacienteActualizar", new
                 {
+                    entity.Pasaporte,
                     entity.Cedula,
                     entity.Nombre,
                     entity.PrimerApellido,
@@ -129,7 +131,7 @@ namespace BL
             {
                 var result = sql.Execute("PacienteEliminar", new
                 {
-                    entity.Cedula
+                    entity.Pasaporte
                 });
                 return result;
             }

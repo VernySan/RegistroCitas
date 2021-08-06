@@ -15,5 +15,6 @@ namespace WinFormsApp
         public static INacionalidadService NacionalidadService => new NacionalidadService();
         public static IHorarioService HorarioService => new HorarioService();
         public static IDoctorService DoctorService => new DoctorService();
+        public static IPacienteService PacienteService => new PacienteService();
     }
 }

@@ -171,6 +171,7 @@ namespace WinFormsApp
             this.bPacientes.Text = "Pacientes";
             this.bPacientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.bPacientes.UseVisualStyleBackColor = true;
+            this.bPacientes.Click += new System.EventHandler(this.bPacientes_Click);
             // 
             // bCitas
             // 

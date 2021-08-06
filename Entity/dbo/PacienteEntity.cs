@@ -14,7 +14,9 @@ namespace Entity
         public string PrimerApellido { get; set; }
         public string SegundoApellido { get; set; }
         public int IdNacionalidad { get; set; }
+        public string Nacionalidad { get; }
         public DateTime FechaNacimiento { get; set; }
+        public int Edad { get; }
         public int Telefono { get; set; }
         public string Enfermedades { get; set; }
         public string Alergias { get; set; }

@@ -5,26 +5,30 @@ AS BEGIN
 	SET NOCOUNT ON
 
 	SELECT
-		  Pasaporte
-	    , Cedula
-	    , Nombre 
-	    , PrimerApellido
-	    , SegundoApellido 
-	    , IdNacionalidad 
-		, FechaNacimiento
-		, DATEDIFF(YEAR,FechaNacimiento,GETDATE()) -
+		  p.Pasaporte
+	    , p.Cedula
+	    , p.Nombre 
+	    , p.PrimerApellido
+	    , p.SegundoApellido 
+	    , p.IdNacionalidad 
+		, n.Nacionalidad
+		, p.FechaNacimiento
+		, DATEDIFF(YEAR,p.FechaNacimiento,GETDATE()) -
 		(CASE
-			WHEN DATEADD(YY,DATEDIFF(YEAR,FechaNacimiento,GETDATE()),FechaNacimiento)>GETDATE() THEN
+			WHEN DATEADD(YY,DATEDIFF(YEAR,p.FechaNacimiento,GETDATE()),p.FechaNacimiento)>GETDATE() THEN
 			1
 		ELSE
 			0 
 		END) as Edad
-		, Telefono
-		, Enfermedades
-		, Alergias
-		, Direccion
-		, Estado
-	FROM dbo.Paciente
+		, p.Telefono
+		, p.Enfermedades
+		, p.Alergias
+		, p.Direccion
+		, p.Estado
+	FROM 
+	  dbo.Paciente p
+	  inner join dbo.Nacionalidad n
+	    on p.IdNacionalidad = n.IdNacionalidad
 	WHERE
 	     (@Pasaporte IS NULL OR Pasaporte=@Pasaporte)
 
