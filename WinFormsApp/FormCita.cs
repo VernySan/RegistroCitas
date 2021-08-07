@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +11,9 @@ using Entity;
 
 namespace WinFormsApp
 {
-    public partial class FormHorario : Form
+    public partial class FormCita : Form
     {
-        public FormHorario()
+        public FormCita()
         {
             InitializeComponent();
         }
@@ -23,8 +22,8 @@ namespace WinFormsApp
         {
             try
             {
-                GridViewHorario.AutoGenerateColumns = false;
-                GridViewHorario.DataSource = IApp.HorarioService.Get();
+                GridViewCita.AutoGenerateColumns = false;
+                GridViewCita.DataSource = IApp.CitaService.Get();
 
             }
             catch (Exception ex)
@@ -38,13 +37,11 @@ namespace WinFormsApp
 
         public void LimpiarDatos() 
         {
-            
-            txtInicio.Text = null;  
-            txtFin.Text = null;
-            txtIdHorario.Text = null;
+            txtCita.Text = null;
+            txtCitaId.Text = null;
         }
 
-        private void FormHorario_Load(object sender, EventArgs e)
+        private void FormCita_Load(object sender, EventArgs e)
         {
             CargarDatos();
         }
@@ -57,10 +54,10 @@ namespace WinFormsApp
 
         public int? GetSelectedRowGrid() 
         {
-            if (GridViewHorario.SelectedRows.Count > 0)
+            if (GridViewCita.SelectedRows.Count > 0)
             {
-                var row = GridViewHorario.SelectedRows[0];
-                return Convert.ToInt32(row.Cells["IdHorario"].Value);
+                var row = GridViewCita.SelectedRows[0];
+                return Convert.ToInt32(row.Cells["IdCita"].Value);
             }
             else
             {
@@ -80,13 +77,12 @@ namespace WinFormsApp
 
                 if (IdSelected.HasValue)
                 {
-                    var result = IApp.HorarioService.GetById(new HorarioEntity()
-                    { IdHorario = IdSelected });
+                    var result = IApp.CitaService.GetById(new CitaEntity()
+                    { IdCita = IdSelected });
 
-                    txtIdHorario.Text = result.IdHorario.ToString();
-                    txtInicio.Text = result.Inicio;
-                    txtFin.Text = result.Fin;
-                    chckEstado.Checked = result.Estado;
+                    txtCitaId.Text = result.IdCita.ToString();
+                    //txtCita.Text = result.Cita;
+
                     panelForm.Visible = true;
                 }
                 else 
@@ -114,8 +110,8 @@ namespace WinFormsApp
 
                 if (IdSelected.HasValue)
                 {
-                    var result = IApp.HorarioService.Delete(new HorarioEntity()
-                    { IdHorario = IdSelected });
+                    var result = IApp.CitaService.Delete(new CitaEntity()
+                    { IdCita = IdSelected });
 
                     if (result.CodeError == 0)
                     {
@@ -144,32 +140,14 @@ namespace WinFormsApp
 
         public bool ValidacionFormulario()
         {
-            if (string.IsNullOrEmpty(txtInicio.Text) || string.IsNullOrEmpty(txtFin.Text))
+            if (string.IsNullOrEmpty(txtCita.Text))
             {
-                MessageBox.Show("Los campos Inicio y Fin son obligatorios");
+                MessageBox.Show("El campo Cita es obligatorio");
                 return false;
             }
 
-            DateTime tInicio;
-            DateTime tFin;
-            bool bInicio = DateTime.TryParse(txtInicio.Text, out tInicio);
-            bool bFin = DateTime.TryParse(txtFin.Text, out tFin);
-
-            if (!bInicio && !bFin)
-            {
-                MessageBox.Show("Las horas se deben digitar en formato HH:MM ó HH:MM AM/PM");
-                return false;
-            }
-
-            if (tInicio >= tFin)
-            {
-                MessageBox.Show("Las hora Fin debe ser mayor a la hora Incio");
-                return false;
-            }
-
-            txtInicio.Text = tInicio.ToString("hh:mm tt");
-            txtFin.Text = tFin.ToString("hh:mm tt");
             return true;       
+        
         
         }
 
@@ -179,29 +157,28 @@ namespace WinFormsApp
             {
                 if (ValidacionFormulario())
                 {
-                    var IdHorario = string.IsNullOrEmpty(txtIdHorario.Text)
+                    var IdCita = string.IsNullOrEmpty(txtCitaId.Text)
                                           ? (int?)null //Insertar
-                                          : Convert.ToInt32(txtIdHorario.Text);//Editar
+                                          : Convert.ToInt32(txtCitaId.Text);//Editar
 
-                    var entity = new HorarioEntity
+                    var entity = new CitaEntity
                     { 
-                        IdHorario = IdHorario,
-                        Inicio=txtInicio.Text,
-                        Fin=txtFin.Text,
-                        Estado = chckEstado.Checked
+                        IdCita = IdCita
+                        //Cita=txtCita.Text
+                    
                     };
 
                     var result = new DBEntity();
-                    if (entity.IdHorario.HasValue)
+                    if (entity.IdCita.HasValue)
                     {
                         //Actualización
-                        result = IApp.HorarioService.Update(entity);
+                        result = IApp.CitaService.Update(entity);
 
                         if (result.CodeError == 0) MessageBox.Show("El registro se actualizó correctamente");
                     }
                     else
                     {
-                        result = IApp.HorarioService.Create(entity);
+                        result = IApp.CitaService.Create(entity);
 
                         if (result.CodeError == 0) MessageBox.Show("El registro se insertó correctamente");
 

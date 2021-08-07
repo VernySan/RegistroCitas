@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsApp
 {
-    partial class FormHorario
+    partial class FormCita
     {
         /// <summary>
         /// Required designer variable.
@@ -29,55 +29,62 @@ namespace WinFormsApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.GridViewHorario = new System.Windows.Forms.DataGridView();
+            this.GridViewCita = new System.Windows.Forms.DataGridView();
+            this.IdCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelForm = new System.Windows.Forms.Panel();
-            this.chckEstado = new System.Windows.Forms.CheckBox();
-            this.txtFin = new System.Windows.Forms.TextBox();
-            this.labelEstado = new System.Windows.Forms.Label();
-            this.txtInicio = new System.Windows.Forms.TextBox();
-            this.labelFin = new System.Windows.Forms.Label();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.labelInicio = new System.Windows.Forms.Label();
-            this.txtIdHorario = new System.Windows.Forms.TextBox();
+            this.txtCita = new System.Windows.Forms.TextBox();
+            this.labelDescripcion = new System.Windows.Forms.Label();
+            this.txtCitaId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnNuevo = new FontAwesome.Sharp.IconButton();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
-            this.IdHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewHorario)).BeginInit();
+            this.dFechaFiltro = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewCita)).BeginInit();
             this.panelForm.SuspendLayout();
             this.SuspendLayout();
             // 
-            // GridViewHorario
+            // GridViewCita
             // 
-            this.GridViewHorario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridViewHorario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdHorario,
-            this.Inicio,
-            this.Fin,
-            this.Estado});
-            this.GridViewHorario.Location = new System.Drawing.Point(1, 2);
-            this.GridViewHorario.Margin = new System.Windows.Forms.Padding(4);
-            this.GridViewHorario.Name = "GridViewHorario";
-            this.GridViewHorario.ReadOnly = true;
-            this.GridViewHorario.RowHeadersWidth = 51;
-            this.GridViewHorario.RowTemplate.Height = 29;
-            this.GridViewHorario.Size = new System.Drawing.Size(634, 568);
-            this.GridViewHorario.TabIndex = 0;
+            this.GridViewCita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridViewCita.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCita,
+            this.Cita});
+            this.GridViewCita.Location = new System.Drawing.Point(1, 2);
+            this.GridViewCita.Margin = new System.Windows.Forms.Padding(4);
+            this.GridViewCita.Name = "GridViewCita";
+            this.GridViewCita.ReadOnly = true;
+            this.GridViewCita.RowHeadersWidth = 51;
+            this.GridViewCita.RowTemplate.Height = 29;
+            this.GridViewCita.Size = new System.Drawing.Size(634, 568);
+            this.GridViewCita.TabIndex = 0;
+            // 
+            // IdCita
+            // 
+            this.IdCita.DataPropertyName = "IdCita";
+            this.IdCita.HeaderText = "Id";
+            this.IdCita.MinimumWidth = 6;
+            this.IdCita.Name = "IdCita";
+            this.IdCita.ReadOnly = true;
+            this.IdCita.Width = 125;
+            // 
+            // Cita
+            // 
+            this.Cita.DataPropertyName = "Cita";
+            this.Cita.HeaderText = "Cita";
+            this.Cita.MinimumWidth = 6;
+            this.Cita.Name = "Cita";
+            this.Cita.ReadOnly = true;
+            this.Cita.Width = 125;
             // 
             // panelForm
             // 
-            this.panelForm.Controls.Add(this.chckEstado);
-            this.panelForm.Controls.Add(this.txtFin);
-            this.panelForm.Controls.Add(this.labelEstado);
-            this.panelForm.Controls.Add(this.txtInicio);
-            this.panelForm.Controls.Add(this.labelFin);
             this.panelForm.Controls.Add(this.BtnGuardar);
-            this.panelForm.Controls.Add(this.labelInicio);
-            this.panelForm.Controls.Add(this.txtIdHorario);
+            this.panelForm.Controls.Add(this.txtCita);
+            this.panelForm.Controls.Add(this.labelDescripcion);
+            this.panelForm.Controls.Add(this.txtCitaId);
             this.panelForm.Controls.Add(this.label1);
             this.panelForm.Location = new System.Drawing.Point(681, 15);
             this.panelForm.Margin = new System.Windows.Forms.Padding(4);
@@ -85,52 +92,6 @@ namespace WinFormsApp
             this.panelForm.Size = new System.Drawing.Size(651, 555);
             this.panelForm.TabIndex = 1;
             this.panelForm.Visible = false;
-            // 
-            // chckEstado
-            // 
-            this.chckEstado.AutoSize = true;
-            this.chckEstado.Checked = true;
-            this.chckEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chckEstado.Location = new System.Drawing.Point(228, 271);
-            this.chckEstado.Margin = new System.Windows.Forms.Padding(4);
-            this.chckEstado.Name = "chckEstado";
-            this.chckEstado.Size = new System.Drawing.Size(22, 21);
-            this.chckEstado.TabIndex = 7;
-            this.chckEstado.UseVisualStyleBackColor = true;
-            // 
-            // txtFin
-            // 
-            this.txtFin.Location = new System.Drawing.Point(141, 211);
-            this.txtFin.Name = "txtFin";
-            this.txtFin.Size = new System.Drawing.Size(150, 31);
-            this.txtFin.TabIndex = 10;
-            // 
-            // labelEstado
-            // 
-            this.labelEstado.AutoSize = true;
-            this.labelEstado.Location = new System.Drawing.Point(50, 267);
-            this.labelEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEstado.Name = "labelEstado";
-            this.labelEstado.Size = new System.Drawing.Size(70, 25);
-            this.labelEstado.TabIndex = 6;
-            this.labelEstado.Text = "Estado:";
-            // 
-            // txtInicio
-            // 
-            this.txtInicio.Location = new System.Drawing.Point(141, 159);
-            this.txtInicio.Name = "txtInicio";
-            this.txtInicio.Size = new System.Drawing.Size(150, 31);
-            this.txtInicio.TabIndex = 9;
-            // 
-            // labelFin
-            // 
-            this.labelFin.AutoSize = true;
-            this.labelFin.Location = new System.Drawing.Point(50, 214);
-            this.labelFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelFin.Name = "labelFin";
-            this.labelFin.Size = new System.Drawing.Size(58, 25);
-            this.labelFin.TabIndex = 8;
-            this.labelFin.Text = "Inicio:";
             // 
             // BtnGuardar
             // 
@@ -151,24 +112,32 @@ namespace WinFormsApp
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // labelInicio
+            // txtCita
             // 
-            this.labelInicio.AutoSize = true;
-            this.labelInicio.Location = new System.Drawing.Point(50, 159);
-            this.labelInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelInicio.Name = "labelInicio";
-            this.labelInicio.Size = new System.Drawing.Size(58, 25);
-            this.labelInicio.TabIndex = 2;
-            this.labelInicio.Text = "Inicio:";
+            this.txtCita.Location = new System.Drawing.Point(228, 150);
+            this.txtCita.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCita.Name = "txtCita";
+            this.txtCita.Size = new System.Drawing.Size(376, 31);
+            this.txtCita.TabIndex = 4;
             // 
-            // txtIdHorario
+            // labelDescripcion
             // 
-            this.txtIdHorario.Location = new System.Drawing.Point(291, 54);
-            this.txtIdHorario.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIdHorario.Name = "txtIdHorario";
-            this.txtIdHorario.Size = new System.Drawing.Size(155, 31);
-            this.txtIdHorario.TabIndex = 1;
-            this.txtIdHorario.Visible = false;
+            this.labelDescripcion.AutoSize = true;
+            this.labelDescripcion.Location = new System.Drawing.Point(50, 159);
+            this.labelDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDescripcion.Name = "labelDescripcion";
+            this.labelDescripcion.Size = new System.Drawing.Size(46, 25);
+            this.labelDescripcion.TabIndex = 2;
+            this.labelDescripcion.Text = "Cita:";
+            // 
+            // txtCitaId
+            // 
+            this.txtCitaId.Location = new System.Drawing.Point(291, 54);
+            this.txtCitaId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCitaId.Name = "txtCitaId";
+            this.txtCitaId.Size = new System.Drawing.Size(155, 31);
+            this.txtCitaId.TabIndex = 1;
+            this.txtCitaId.Visible = false;
             // 
             // label1
             // 
@@ -177,9 +146,9 @@ namespace WinFormsApp
             this.label1.Location = new System.Drawing.Point(56, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 38);
+            this.label1.Size = new System.Drawing.Size(76, 38);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Horarios";
+            this.label1.Text = "Citas";
             // 
             // BtnNuevo
             // 
@@ -238,58 +207,30 @@ namespace WinFormsApp
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // IdHorario
+            // dFechaFiltro
             // 
-            this.IdHorario.DataPropertyName = "IdHorario";
-            this.IdHorario.HeaderText = "Id";
-            this.IdHorario.MinimumWidth = 6;
-            this.IdHorario.Name = "IdHorario";
-            this.IdHorario.ReadOnly = true;
-            this.IdHorario.Width = 125;
+            this.dFechaFiltro.Location = new System.Drawing.Point(548, 618);
+            this.dFechaFiltro.Name = "dFechaFiltro";
+            this.dFechaFiltro.Size = new System.Drawing.Size(300, 31);
+            this.dFechaFiltro.TabIndex = 5;
             // 
-            // Inicio
-            // 
-            this.Inicio.DataPropertyName = "Inicio";
-            this.Inicio.HeaderText = "Inicio";
-            this.Inicio.MinimumWidth = 6;
-            this.Inicio.Name = "Inicio";
-            this.Inicio.ReadOnly = true;
-            this.Inicio.Width = 125;
-            // 
-            // Fin
-            // 
-            this.Fin.DataPropertyName = "Fin";
-            this.Fin.HeaderText = "Fin";
-            this.Fin.MinimumWidth = 8;
-            this.Fin.Name = "Fin";
-            this.Fin.ReadOnly = true;
-            this.Fin.Width = 150;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 8;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 150;
-            // 
-            // FormHorario
+            // FormCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 716);
+            this.Controls.Add(this.dFechaFiltro);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnNuevo);
             this.Controls.Add(this.panelForm);
-            this.Controls.Add(this.GridViewHorario);
+            this.Controls.Add(this.GridViewCita);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FormHorario";
-            this.Text = "Horario";
+            this.Name = "FormCita";
+            this.Text = "Cita";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormHorario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.GridViewHorario)).EndInit();
+            this.Load += new System.EventHandler(this.FormCita_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridViewCita)).EndInit();
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();
             this.ResumeLayout(false);
@@ -298,23 +239,18 @@ namespace WinFormsApp
 
         #endregion
 
-        private System.Windows.Forms.DataGridView GridViewHorario;
+        private System.Windows.Forms.DataGridView GridViewCita;
         private System.Windows.Forms.Panel panelForm;
-        private System.Windows.Forms.Label labelInicio;
-        private System.Windows.Forms.TextBox txtIdHorario;
+        private System.Windows.Forms.Label labelDescripcion;
+        private System.Windows.Forms.TextBox txtCitaId;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton BtnGuardar;
+        private System.Windows.Forms.TextBox txtCita;
         private FontAwesome.Sharp.IconButton BtnNuevo;
         private FontAwesome.Sharp.IconButton BtnEditar;
         private FontAwesome.Sharp.IconButton BtnEliminar;
-        private System.Windows.Forms.Label labelFin;
-        private System.Windows.Forms.TextBox txtFin;
-        private System.Windows.Forms.TextBox txtInicio;
-        private System.Windows.Forms.CheckBox chckEstado;
-        private System.Windows.Forms.Label labelEstado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdHorario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Inicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fin;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Estado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cita;
+        private System.Windows.Forms.DateTimePicker dFechaFiltro;
     }
 }

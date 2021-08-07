@@ -16,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FormCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormPaciente.cs" />
     <Compile Update="FormDoctor.cs" />
     <Compile Update="FormHorario.cs" />
@@ -25,6 +28,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FormCita.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="FormPaciente.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
