@@ -60,9 +60,9 @@ namespace WinFormsApp
             this.panelMenuIzquierda.Controls.Add(this.panelMenuLogo);
             this.panelMenuIzquierda.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuIzquierda.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuIzquierda.Margin = new System.Windows.Forms.Padding(4);
+            this.panelMenuIzquierda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenuIzquierda.Name = "panelMenuIzquierda";
-            this.panelMenuIzquierda.Size = new System.Drawing.Size(275, 958);
+            this.panelMenuIzquierda.Size = new System.Drawing.Size(192, 575);
             this.panelMenuIzquierda.TabIndex = 0;
             // 
             // bNacionalidades
@@ -73,10 +73,10 @@ namespace WinFormsApp
             this.bNacionalidades.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bNacionalidades.IconColor = System.Drawing.Color.LightBlue;
             this.bNacionalidades.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bNacionalidades.Location = new System.Drawing.Point(4, 608);
-            this.bNacionalidades.Margin = new System.Windows.Forms.Padding(4);
+            this.bNacionalidades.Location = new System.Drawing.Point(3, 365);
+            this.bNacionalidades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bNacionalidades.Name = "bNacionalidades";
-            this.bNacionalidades.Size = new System.Drawing.Size(230, 72);
+            this.bNacionalidades.Size = new System.Drawing.Size(161, 43);
             this.bNacionalidades.TabIndex = 9;
             this.bNacionalidades.Text = "Nacionalidades";
             this.bNacionalidades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -91,10 +91,10 @@ namespace WinFormsApp
             this.bHorario.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bHorario.IconColor = System.Drawing.Color.LightBlue;
             this.bHorario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bHorario.Location = new System.Drawing.Point(0, 528);
-            this.bHorario.Margin = new System.Windows.Forms.Padding(4);
+            this.bHorario.Location = new System.Drawing.Point(0, 317);
+            this.bHorario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bHorario.Name = "bHorario";
-            this.bHorario.Size = new System.Drawing.Size(230, 72);
+            this.bHorario.Size = new System.Drawing.Size(161, 43);
             this.bHorario.TabIndex = 8;
             this.bHorario.Text = "Horario";
             this.bHorario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -109,10 +109,10 @@ namespace WinFormsApp
             this.bEspecialidades.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bEspecialidades.IconColor = System.Drawing.Color.LightBlue;
             this.bEspecialidades.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bEspecialidades.Location = new System.Drawing.Point(0, 448);
-            this.bEspecialidades.Margin = new System.Windows.Forms.Padding(4);
+            this.bEspecialidades.Location = new System.Drawing.Point(0, 269);
+            this.bEspecialidades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bEspecialidades.Name = "bEspecialidades";
-            this.bEspecialidades.Size = new System.Drawing.Size(230, 72);
+            this.bEspecialidades.Size = new System.Drawing.Size(161, 43);
             this.bEspecialidades.TabIndex = 7;
             this.bEspecialidades.Text = "Especialidades";
             this.bEspecialidades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -127,10 +127,10 @@ namespace WinFormsApp
             this.bServicios.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bServicios.IconColor = System.Drawing.Color.LightBlue;
             this.bServicios.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bServicios.Location = new System.Drawing.Point(0, 355);
-            this.bServicios.Margin = new System.Windows.Forms.Padding(4);
+            this.bServicios.Location = new System.Drawing.Point(0, 213);
+            this.bServicios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bServicios.Name = "bServicios";
-            this.bServicios.Size = new System.Drawing.Size(230, 72);
+            this.bServicios.Size = new System.Drawing.Size(161, 43);
             this.bServicios.TabIndex = 6;
             this.bServicios.Text = "Servicios";
             this.bServicios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -145,10 +145,10 @@ namespace WinFormsApp
             this.bDoctores.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bDoctores.IconColor = System.Drawing.Color.LightBlue;
             this.bDoctores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bDoctores.Location = new System.Drawing.Point(0, 275);
-            this.bDoctores.Margin = new System.Windows.Forms.Padding(4);
+            this.bDoctores.Location = new System.Drawing.Point(0, 165);
+            this.bDoctores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bDoctores.Name = "bDoctores";
-            this.bDoctores.Size = new System.Drawing.Size(230, 72);
+            this.bDoctores.Size = new System.Drawing.Size(161, 43);
             this.bDoctores.TabIndex = 5;
             this.bDoctores.Text = "Doctores";
             this.bDoctores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -163,10 +163,10 @@ namespace WinFormsApp
             this.bPacientes.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bPacientes.IconColor = System.Drawing.Color.LightBlue;
             this.bPacientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bPacientes.Location = new System.Drawing.Point(0, 195);
-            this.bPacientes.Margin = new System.Windows.Forms.Padding(4);
+            this.bPacientes.Location = new System.Drawing.Point(0, 117);
+            this.bPacientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bPacientes.Name = "bPacientes";
-            this.bPacientes.Size = new System.Drawing.Size(230, 72);
+            this.bPacientes.Size = new System.Drawing.Size(161, 43);
             this.bPacientes.TabIndex = 4;
             this.bPacientes.Text = "Pacientes";
             this.bPacientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -181,10 +181,10 @@ namespace WinFormsApp
             this.bCitas.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bCitas.IconColor = System.Drawing.Color.LightBlue;
             this.bCitas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bCitas.Location = new System.Drawing.Point(4, 115);
-            this.bCitas.Margin = new System.Windows.Forms.Padding(4);
+            this.bCitas.Location = new System.Drawing.Point(3, 69);
+            this.bCitas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bCitas.Name = "bCitas";
-            this.bCitas.Size = new System.Drawing.Size(230, 72);
+            this.bCitas.Size = new System.Drawing.Size(161, 43);
             this.bCitas.TabIndex = 3;
             this.bCitas.Text = "Citas";
             this.bCitas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -195,9 +195,9 @@ namespace WinFormsApp
             this.panelMenuLogo.Controls.Add(this.iconButton1);
             this.panelMenuLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenuLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.panelMenuLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenuLogo.Name = "panelMenuLogo";
-            this.panelMenuLogo.Size = new System.Drawing.Size(275, 115);
+            this.panelMenuLogo.Size = new System.Drawing.Size(192, 69);
             this.panelMenuLogo.TabIndex = 0;
             // 
             // iconButton1
@@ -207,13 +207,13 @@ namespace WinFormsApp
             this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.iconButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Car;
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
             this.iconButton1.IconColor = System.Drawing.Color.LightBlue;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.Location = new System.Drawing.Point(0, 0);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(275, 109);
+            this.iconButton1.Size = new System.Drawing.Size(192, 65);
             this.iconButton1.TabIndex = 0;
             this.iconButton1.Text = "Registro de Citas";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -224,10 +224,10 @@ namespace WinFormsApp
             this.panelMenuTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(72)))));
             this.panelMenuTop.Controls.Add(this.MenuLabelPrincipal);
             this.panelMenuTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMenuTop.Location = new System.Drawing.Point(275, 0);
-            this.panelMenuTop.Margin = new System.Windows.Forms.Padding(4);
+            this.panelMenuTop.Location = new System.Drawing.Point(192, 0);
+            this.panelMenuTop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenuTop.Name = "panelMenuTop";
-            this.panelMenuTop.Size = new System.Drawing.Size(1474, 115);
+            this.panelMenuTop.Size = new System.Drawing.Size(1032, 69);
             this.panelMenuTop.TabIndex = 1;
             // 
             // MenuLabelPrincipal
@@ -235,31 +235,30 @@ namespace WinFormsApp
             this.MenuLabelPrincipal.AutoSize = true;
             this.MenuLabelPrincipal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.MenuLabelPrincipal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.MenuLabelPrincipal.Location = new System.Drawing.Point(36, 29);
-            this.MenuLabelPrincipal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MenuLabelPrincipal.Location = new System.Drawing.Point(25, 17);
             this.MenuLabelPrincipal.Name = "MenuLabelPrincipal";
-            this.MenuLabelPrincipal.Size = new System.Drawing.Size(217, 32);
+            this.MenuLabelPrincipal.Size = new System.Drawing.Size(141, 21);
             this.MenuLabelPrincipal.TabIndex = 0;
             this.MenuLabelPrincipal.Text = "Clínica Monte Cruz";
             // 
             // panelMenuPrincipal
             // 
             this.panelMenuPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMenuPrincipal.Location = new System.Drawing.Point(275, 115);
-            this.panelMenuPrincipal.Margin = new System.Windows.Forms.Padding(4);
+            this.panelMenuPrincipal.Location = new System.Drawing.Point(192, 69);
+            this.panelMenuPrincipal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelMenuPrincipal.Name = "panelMenuPrincipal";
-            this.panelMenuPrincipal.Size = new System.Drawing.Size(1474, 843);
+            this.panelMenuPrincipal.Size = new System.Drawing.Size(1032, 506);
             this.panelMenuPrincipal.TabIndex = 2;
             // 
             // FormMenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1749, 958);
+            this.ClientSize = new System.Drawing.Size(1224, 575);
             this.Controls.Add(this.panelMenuPrincipal);
             this.Controls.Add(this.panelMenuTop);
             this.Controls.Add(this.panelMenuIzquierda);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormMenuPrincipal";
             this.ShowInTaskbar = false;
             this.Text = "Menú";
