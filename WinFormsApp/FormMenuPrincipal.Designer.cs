@@ -73,7 +73,7 @@ namespace WinFormsApp
             this.bNacionalidades.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bNacionalidades.IconColor = System.Drawing.Color.LightBlue;
             this.bNacionalidades.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bNacionalidades.Location = new System.Drawing.Point(3, 365);
+            this.bNacionalidades.Location = new System.Drawing.Point(11, 365);
             this.bNacionalidades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bNacionalidades.Name = "bNacionalidades";
             this.bNacionalidades.Size = new System.Drawing.Size(161, 43);
@@ -109,7 +109,7 @@ namespace WinFormsApp
             this.bEspecialidades.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bEspecialidades.IconColor = System.Drawing.Color.LightBlue;
             this.bEspecialidades.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bEspecialidades.Location = new System.Drawing.Point(0, 269);
+            this.bEspecialidades.Location = new System.Drawing.Point(8, 269);
             this.bEspecialidades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bEspecialidades.Name = "bEspecialidades";
             this.bEspecialidades.Size = new System.Drawing.Size(161, 43);
@@ -145,7 +145,7 @@ namespace WinFormsApp
             this.bDoctores.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bDoctores.IconColor = System.Drawing.Color.LightBlue;
             this.bDoctores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bDoctores.Location = new System.Drawing.Point(0, 165);
+            this.bDoctores.Location = new System.Drawing.Point(-1, 164);
             this.bDoctores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bDoctores.Name = "bDoctores";
             this.bDoctores.Size = new System.Drawing.Size(161, 43);
@@ -181,7 +181,7 @@ namespace WinFormsApp
             this.bCitas.IconChar = FontAwesome.Sharp.IconChar.Minus;
             this.bCitas.IconColor = System.Drawing.Color.LightBlue;
             this.bCitas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.bCitas.Location = new System.Drawing.Point(3, 69);
+            this.bCitas.Location = new System.Drawing.Point(-3, 69);
             this.bCitas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bCitas.Name = "bCitas";
             this.bCitas.Size = new System.Drawing.Size(161, 43);
