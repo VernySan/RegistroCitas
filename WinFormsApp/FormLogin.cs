@@ -25,6 +25,7 @@ namespace WinFormsApp
             form.Show();
         }
 
+
         private void Iniciar_Sesion_Click(object sender, EventArgs e)
         {
             try
@@ -74,5 +75,6 @@ namespace WinFormsApp
                 MessageBox.Show(ex.Message);
             }
         }
+
     }
 }

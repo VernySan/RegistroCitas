@@ -31,17 +31,31 @@ namespace WinFormsApp
         {
             this.GridViewCita = new System.Windows.Forms.DataGridView();
             this.IdCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdHorario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdDoctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Doctor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Servicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboServicio = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboPaciente = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboDoctor = new System.Windows.Forms.ComboBox();
             this.BtnGuardar = new FontAwesome.Sharp.IconButton();
-            this.txtCita = new System.Windows.Forms.TextBox();
-            this.labelDescripcion = new System.Windows.Forms.Label();
-            this.txtCitaId = new System.Windows.Forms.TextBox();
+            this.txtIdCita = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnNuevo = new FontAwesome.Sharp.IconButton();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
-            this.dFechaFiltro = new System.Windows.Forms.DateTimePicker();
+            this.FechaFiltro = new System.Windows.Forms.DateTimePicker();
+            this.txtIdHorario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewCita)).BeginInit();
             this.panelForm.SuspendLayout();
             this.SuspendLayout();
@@ -51,14 +65,23 @@ namespace WinFormsApp
             this.GridViewCita.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewCita.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCita,
-            this.Cita});
+            this.IdHorario,
+            this.xFecha,
+            this.Inicio,
+            this.Fin,
+            this.IdDoctor,
+            this.Doctor,
+            this.IdPaciente,
+            this.Paciente,
+            this.IdServicio,
+            this.Servicio});
             this.GridViewCita.Location = new System.Drawing.Point(1, 2);
             this.GridViewCita.Margin = new System.Windows.Forms.Padding(4);
             this.GridViewCita.Name = "GridViewCita";
             this.GridViewCita.ReadOnly = true;
             this.GridViewCita.RowHeadersWidth = 51;
             this.GridViewCita.RowTemplate.Height = 29;
-            this.GridViewCita.Size = new System.Drawing.Size(634, 568);
+            this.GridViewCita.Size = new System.Drawing.Size(905, 568);
             this.GridViewCita.TabIndex = 0;
             // 
             // IdCita
@@ -68,30 +91,178 @@ namespace WinFormsApp
             this.IdCita.MinimumWidth = 6;
             this.IdCita.Name = "IdCita";
             this.IdCita.ReadOnly = true;
+            this.IdCita.Visible = false;
             this.IdCita.Width = 125;
             // 
-            // Cita
+            // IdHorario
             // 
-            this.Cita.DataPropertyName = "Cita";
-            this.Cita.HeaderText = "Cita";
-            this.Cita.MinimumWidth = 6;
-            this.Cita.Name = "Cita";
-            this.Cita.ReadOnly = true;
-            this.Cita.Width = 125;
+            this.IdHorario.DataPropertyName = "IdHorario";
+            this.IdHorario.HeaderText = "IdHorario";
+            this.IdHorario.MinimumWidth = 6;
+            this.IdHorario.Name = "IdHorario";
+            this.IdHorario.ReadOnly = true;
+            this.IdHorario.Visible = false;
+            this.IdHorario.Width = 125;
+            // 
+            // xFecha
+            // 
+            this.xFecha.DataPropertyName = "Fecha";
+            this.xFecha.HeaderText = "Fecha";
+            this.xFecha.MinimumWidth = 8;
+            this.xFecha.Name = "xFecha";
+            this.xFecha.ReadOnly = true;
+            this.xFecha.Width = 150;
+            // 
+            // Inicio
+            // 
+            this.Inicio.DataPropertyName = "Inicio";
+            this.Inicio.HeaderText = "Inicio";
+            this.Inicio.MinimumWidth = 8;
+            this.Inicio.Name = "Inicio";
+            this.Inicio.ReadOnly = true;
+            this.Inicio.Width = 150;
+            // 
+            // Fin
+            // 
+            this.Fin.DataPropertyName = "Fin";
+            this.Fin.HeaderText = "Fin";
+            this.Fin.MinimumWidth = 8;
+            this.Fin.Name = "Fin";
+            this.Fin.ReadOnly = true;
+            this.Fin.Width = 150;
+            // 
+            // IdDoctor
+            // 
+            this.IdDoctor.DataPropertyName = "IdDoctor";
+            this.IdDoctor.HeaderText = "IdDoctor";
+            this.IdDoctor.MinimumWidth = 8;
+            this.IdDoctor.Name = "IdDoctor";
+            this.IdDoctor.ReadOnly = true;
+            this.IdDoctor.Visible = false;
+            this.IdDoctor.Width = 150;
+            // 
+            // Doctor
+            // 
+            this.Doctor.DataPropertyName = "Doctor";
+            this.Doctor.HeaderText = "Doctor";
+            this.Doctor.MinimumWidth = 8;
+            this.Doctor.Name = "Doctor";
+            this.Doctor.ReadOnly = true;
+            this.Doctor.Width = 150;
+            // 
+            // IdPaciente
+            // 
+            this.IdPaciente.DataPropertyName = "IdPaciente";
+            this.IdPaciente.HeaderText = "IdPaciente";
+            this.IdPaciente.MinimumWidth = 8;
+            this.IdPaciente.Name = "IdPaciente";
+            this.IdPaciente.ReadOnly = true;
+            this.IdPaciente.Visible = false;
+            this.IdPaciente.Width = 150;
+            // 
+            // Paciente
+            // 
+            this.Paciente.DataPropertyName = "Paciente";
+            this.Paciente.HeaderText = "Paciente";
+            this.Paciente.MinimumWidth = 8;
+            this.Paciente.Name = "Paciente";
+            this.Paciente.ReadOnly = true;
+            this.Paciente.Width = 150;
+            // 
+            // IdServicio
+            // 
+            this.IdServicio.DataPropertyName = "IdServicio";
+            this.IdServicio.HeaderText = "IdServicio";
+            this.IdServicio.MinimumWidth = 8;
+            this.IdServicio.Name = "IdServicio";
+            this.IdServicio.ReadOnly = true;
+            this.IdServicio.Visible = false;
+            this.IdServicio.Width = 150;
+            // 
+            // Servicio
+            // 
+            this.Servicio.DataPropertyName = "Servicio";
+            this.Servicio.HeaderText = "Servicio";
+            this.Servicio.MinimumWidth = 8;
+            this.Servicio.Name = "Servicio";
+            this.Servicio.ReadOnly = true;
+            this.Servicio.Width = 150;
             // 
             // panelForm
             // 
+            this.panelForm.Controls.Add(this.txtIdHorario);
+            this.panelForm.Controls.Add(this.label4);
+            this.panelForm.Controls.Add(this.cboServicio);
+            this.panelForm.Controls.Add(this.label3);
+            this.panelForm.Controls.Add(this.cboPaciente);
+            this.panelForm.Controls.Add(this.label2);
+            this.panelForm.Controls.Add(this.cboDoctor);
             this.panelForm.Controls.Add(this.BtnGuardar);
-            this.panelForm.Controls.Add(this.txtCita);
-            this.panelForm.Controls.Add(this.labelDescripcion);
-            this.panelForm.Controls.Add(this.txtCitaId);
+            this.panelForm.Controls.Add(this.txtIdCita);
             this.panelForm.Controls.Add(this.label1);
-            this.panelForm.Location = new System.Drawing.Point(681, 15);
+            this.panelForm.Location = new System.Drawing.Point(914, 2);
             this.panelForm.Margin = new System.Windows.Forms.Padding(4);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(651, 555);
+            this.panelForm.Size = new System.Drawing.Size(463, 568);
             this.panelForm.TabIndex = 1;
             this.panelForm.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 227);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(73, 25);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Servicio";
+            // 
+            // cboServicio
+            // 
+            this.cboServicio.FormattingEnabled = true;
+            this.cboServicio.Location = new System.Drawing.Point(99, 227);
+            this.cboServicio.Margin = new System.Windows.Forms.Padding(4);
+            this.cboServicio.Name = "cboServicio";
+            this.cboServicio.Size = new System.Drawing.Size(354, 33);
+            this.cboServicio.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 178);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 25);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Paciente:";
+            // 
+            // cboPaciente
+            // 
+            this.cboPaciente.FormattingEnabled = true;
+            this.cboPaciente.Location = new System.Drawing.Point(99, 173);
+            this.cboPaciente.Margin = new System.Windows.Forms.Padding(4);
+            this.cboPaciente.Name = "cboPaciente";
+            this.cboPaciente.Size = new System.Drawing.Size(354, 33);
+            this.cboPaciente.TabIndex = 10;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 122);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 25);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Doctor:";
+            // 
+            // cboDoctor
+            // 
+            this.cboDoctor.FormattingEnabled = true;
+            this.cboDoctor.Location = new System.Drawing.Point(99, 117);
+            this.cboDoctor.Margin = new System.Windows.Forms.Padding(4);
+            this.cboDoctor.Name = "cboDoctor";
+            this.cboDoctor.Size = new System.Drawing.Size(354, 33);
+            this.cboDoctor.TabIndex = 8;
             // 
             // BtnGuardar
             // 
@@ -102,7 +273,7 @@ namespace WinFormsApp
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 32;
-            this.BtnGuardar.Location = new System.Drawing.Point(262, 340);
+            this.BtnGuardar.Location = new System.Drawing.Point(130, 303);
             this.BtnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(166, 56);
@@ -112,38 +283,20 @@ namespace WinFormsApp
             this.BtnGuardar.UseVisualStyleBackColor = false;
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // txtCita
+            // txtIdCita
             // 
-            this.txtCita.Location = new System.Drawing.Point(228, 150);
-            this.txtCita.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCita.Name = "txtCita";
-            this.txtCita.Size = new System.Drawing.Size(376, 31);
-            this.txtCita.TabIndex = 4;
-            // 
-            // labelDescripcion
-            // 
-            this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.Location = new System.Drawing.Point(50, 159);
-            this.labelDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDescripcion.Name = "labelDescripcion";
-            this.labelDescripcion.Size = new System.Drawing.Size(46, 25);
-            this.labelDescripcion.TabIndex = 2;
-            this.labelDescripcion.Text = "Cita:";
-            // 
-            // txtCitaId
-            // 
-            this.txtCitaId.Location = new System.Drawing.Point(291, 54);
-            this.txtCitaId.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCitaId.Name = "txtCitaId";
-            this.txtCitaId.Size = new System.Drawing.Size(155, 31);
-            this.txtCitaId.TabIndex = 1;
-            this.txtCitaId.Visible = false;
+            this.txtIdCita.Location = new System.Drawing.Point(99, 65);
+            this.txtIdCita.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdCita.Name = "txtIdCita";
+            this.txtIdCita.Size = new System.Drawing.Size(155, 31);
+            this.txtIdCita.TabIndex = 1;
+            this.txtIdCita.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(56, 49);
+            this.label1.Location = new System.Drawing.Point(13, 10);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 38);
@@ -159,7 +312,7 @@ namespace WinFormsApp
             this.BtnNuevo.IconColor = System.Drawing.Color.White;
             this.BtnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnNuevo.IconSize = 32;
-            this.BtnNuevo.Location = new System.Drawing.Point(49, 618);
+            this.BtnNuevo.Location = new System.Drawing.Point(211, 607);
             this.BtnNuevo.Margin = new System.Windows.Forms.Padding(4);
             this.BtnNuevo.Name = "BtnNuevo";
             this.BtnNuevo.Size = new System.Drawing.Size(122, 54);
@@ -178,7 +331,7 @@ namespace WinFormsApp
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 32;
-            this.BtnEditar.Location = new System.Drawing.Point(191, 618);
+            this.BtnEditar.Location = new System.Drawing.Point(353, 607);
             this.BtnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnEditar.Name = "BtnEditar";
             this.BtnEditar.Size = new System.Drawing.Size(118, 54);
@@ -197,7 +350,7 @@ namespace WinFormsApp
             this.BtnEliminar.IconColor = System.Drawing.Color.White;
             this.BtnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEliminar.IconSize = 32;
-            this.BtnEliminar.Location = new System.Drawing.Point(330, 618);
+            this.BtnEliminar.Location = new System.Drawing.Point(492, 607);
             this.BtnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnEliminar.Name = "BtnEliminar";
             this.BtnEliminar.Size = new System.Drawing.Size(144, 54);
@@ -207,19 +360,30 @@ namespace WinFormsApp
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // dFechaFiltro
+            // FechaFiltro
             // 
-            this.dFechaFiltro.Location = new System.Drawing.Point(548, 618);
-            this.dFechaFiltro.Name = "dFechaFiltro";
-            this.dFechaFiltro.Size = new System.Drawing.Size(300, 31);
-            this.dFechaFiltro.TabIndex = 5;
+            this.FechaFiltro.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechaFiltro.Location = new System.Drawing.Point(43, 617);
+            this.FechaFiltro.Name = "FechaFiltro";
+            this.FechaFiltro.Size = new System.Drawing.Size(149, 31);
+            this.FechaFiltro.TabIndex = 5;
+            this.FechaFiltro.ValueChanged += new System.EventHandler(this.FechaFiltro_ValueChanged);
+            // 
+            // txtIdHorario
+            // 
+            this.txtIdHorario.Location = new System.Drawing.Point(276, 65);
+            this.txtIdHorario.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIdHorario.Name = "txtIdHorario";
+            this.txtIdHorario.Size = new System.Drawing.Size(155, 31);
+            this.txtIdHorario.TabIndex = 14;
+            this.txtIdHorario.Visible = false;
             // 
             // FormCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 716);
-            this.Controls.Add(this.dFechaFiltro);
+            this.Controls.Add(this.FechaFiltro);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnNuevo);
@@ -241,16 +405,30 @@ namespace WinFormsApp
 
         private System.Windows.Forms.DataGridView GridViewCita;
         private System.Windows.Forms.Panel panelForm;
-        private System.Windows.Forms.Label labelDescripcion;
-        private System.Windows.Forms.TextBox txtCitaId;
+        private System.Windows.Forms.TextBox txtIdCita;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton BtnGuardar;
-        private System.Windows.Forms.TextBox txtCita;
         private FontAwesome.Sharp.IconButton BtnNuevo;
         private FontAwesome.Sharp.IconButton BtnEditar;
         private FontAwesome.Sharp.IconButton BtnEliminar;
+        private System.Windows.Forms.DateTimePicker FechaFiltro;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cita;
-        private System.Windows.Forms.DateTimePicker dFechaFiltro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdHorario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Inicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdDoctor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Doctor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdPaciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Paciente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdServicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Servicio;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboServicio;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboPaciente;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cboDoctor;
+        private System.Windows.Forms.TextBox txtIdHorario;
     }
 }

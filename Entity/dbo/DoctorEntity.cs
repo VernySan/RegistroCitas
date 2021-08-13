@@ -16,5 +16,6 @@ namespace Entity
         public string Especialidad { get;  }
         public int Telefono { get; set; }
         public string Direccion { get; set; }
+        public string Doctor { get; }
     }
 }

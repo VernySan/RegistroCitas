@@ -9,10 +9,15 @@ namespace Entity
     public class CitaEntity 
     {
         public int? IdCita { get; set; }
-        public DateTime Fecha { get; set; }
+        public DateTime Fecha { get; set; } = DateTime.Now;
         public int IdHorario { get; set; }
-        public int IdDoctor { get; set; }
+        public String Inicio { get; }
+        public String Fin { get; }
+        public int? IdDoctor { get; set; }
+        public String Doctor { get; }
         public int IdPaciente { get; set; }
+        public String Paciente { get; }
         public int IdServicio { get; set; }
+        public String Servicio { get; }
     }
 }

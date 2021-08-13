@@ -13,6 +13,7 @@ namespace BL
         DBEntity Create(CitaEntity entity);
         DBEntity Delete(CitaEntity entity);
         IEnumerable<CitaEntity> Get();
+        IEnumerable<CitaEntity> GetByDate(CitaEntity entity);
         CitaEntity GetById(CitaEntity entity);
         DBEntity Update(CitaEntity entity);
     }
@@ -43,7 +44,30 @@ namespace BL
 
         }
 
-        //Metódo para obtener el detalle de un registro
+        public IEnumerable<CitaEntity> GetByDate(CitaEntity entity)
+        {
+            try
+            {
+                var result = sql.Query<CitaEntity>("CitaObtener", new
+                {
+                    entity.IdCita,
+                    entity.Fecha
+
+                });
+
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
+        //Metódo para obtener el detalle de un registro por Id
         public CitaEntity GetById(CitaEntity entity)
         {
             try
@@ -51,7 +75,6 @@ namespace BL
                 var result = sql.QueryFirst<CitaEntity>("CitaObtener", new
                 {
                     entity.IdCita
-
                 });
 
                 return result;
@@ -129,6 +152,7 @@ namespace BL
             }
 
         }
+
 
     }
 }

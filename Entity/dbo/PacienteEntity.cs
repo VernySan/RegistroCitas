@@ -21,5 +21,7 @@ namespace Entity
         public string Enfermedades { get; set; }
         public string Alergias { get; set; }
         public string Direccion { get; set; }
+        public string IdPaciente { get; }
+        public string Paciente { get; }
     }
 }

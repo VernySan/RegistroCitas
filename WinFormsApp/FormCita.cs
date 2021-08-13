@@ -23,7 +23,54 @@ namespace WinFormsApp
             try
             {
                 GridViewCita.AutoGenerateColumns = false;
-                GridViewCita.DataSource = IApp.CitaService.Get();
+                GridViewCita.DataSource = IApp.CitaService.GetByDate(new CitaEntity()
+                {
+                    Fecha = FechaFiltro.Value
+                });
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void LimpiarDatos() 
+        {
+            txtIdCita.Text = null;
+            cboDoctor.SelectedIndex = -1;
+            cboPaciente.SelectedIndex = -1;
+            cboServicio.SelectedIndex = -1;
+        }
+
+        private void FormCita_Load(object sender, EventArgs e)
+        {
+            CargarDatos();
+            CargaCboDoctor();
+            CargaCboPaciente();
+            CargaCboServicio();
+        }
+
+        private void BtnNuevo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LimpiarDatos();
+
+                var IdSelected = GetSelectedRowGridHorario();
+
+                if (IdSelected.HasValue)
+                {
+
+//                    txtIdHorario.Text = IdSelected.ToString;
+
+                    panelForm.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Por favor seleccione un Horario");
+                }
+
 
             }
             catch (Exception ex)
@@ -31,25 +78,6 @@ namespace WinFormsApp
 
                 MessageBox.Show(ex.Message);
             }
-        
-        
-        }
-
-        public void LimpiarDatos() 
-        {
-            txtCita.Text = null;
-            txtCitaId.Text = null;
-        }
-
-        private void FormCita_Load(object sender, EventArgs e)
-        {
-            CargarDatos();
-        }
-
-        private void BtnNuevo_Click(object sender, EventArgs e)
-        {
-            LimpiarDatos();
-            panelForm.Visible = true;
         }
 
         public int? GetSelectedRowGrid() 
@@ -63,8 +91,19 @@ namespace WinFormsApp
             {
                 return null;
             }    
-        
-        
+        }
+
+        public int? GetSelectedRowGridHorario()
+        {
+            if (GridViewCita.SelectedRows.Count > 0)
+            {
+                var row = GridViewCita.SelectedRows[1];
+                return Convert.ToInt32(row.Cells["IdHorario"].Value);
+            }
+            else
+            {
+                return null;
+            }
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)
@@ -80,8 +119,11 @@ namespace WinFormsApp
                     var result = IApp.CitaService.GetById(new CitaEntity()
                     { IdCita = IdSelected });
 
-                    txtCitaId.Text = result.IdCita.ToString();
-                    //txtCita.Text = result.Cita;
+                    txtIdCita.Text = result.IdCita.ToString();
+                    txtIdHorario.Text = result.IdHorario.ToString();
+                    cboDoctor.SelectedValue = result.IdDoctor;
+                    cboPaciente.SelectedValue = result.IdPaciente;
+                    cboServicio.SelectedValue = result.IdServicio;
 
                     panelForm.Visible = true;
                 }
@@ -140,9 +182,22 @@ namespace WinFormsApp
 
         public bool ValidacionFormulario()
         {
-            if (string.IsNullOrEmpty(txtCita.Text))
+
+            if (string.IsNullOrEmpty(cboDoctor.SelectedValue?.ToString()))
             {
-                MessageBox.Show("El campo Cita es obligatorio");
+                MessageBox.Show("El camppo Doctor es obligatorio");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(cboPaciente.SelectedValue?.ToString()))
+            {
+                MessageBox.Show("El camppo Paciente es obligatorio");
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(cboServicio.SelectedValue?.ToString()))
+            {
+                MessageBox.Show("El camppo Servicio es obligatorio");
                 return false;
             }
 
@@ -157,15 +212,18 @@ namespace WinFormsApp
             {
                 if (ValidacionFormulario())
                 {
-                    var IdCita = string.IsNullOrEmpty(txtCitaId.Text)
+                    var IdCita = string.IsNullOrEmpty(txtIdCita.Text)
                                           ? (int?)null //Insertar
-                                          : Convert.ToInt32(txtCitaId.Text);//Editar
+                                          : Convert.ToInt32(txtIdCita.Text);//Editar
 
                     var entity = new CitaEntity
                     { 
-                        IdCita = IdCita
-                        //Cita=txtCita.Text
-                    
+                        IdCita = IdCita,
+                        IdHorario = Convert.ToInt32(txtIdHorario.Text),
+                        Fecha = FechaFiltro.Value,
+                        IdDoctor = Convert.ToInt32(cboDoctor.SelectedValue),
+                        IdPaciente = Convert.ToInt32(cboPaciente.SelectedValue),
+                        IdServicio = Convert.ToInt32(cboServicio.SelectedValue)
                     };
 
                     var result = new DBEntity();
@@ -199,5 +257,63 @@ namespace WinFormsApp
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void FechaFiltro_ValueChanged(object sender, EventArgs e)
+        {
+            CargarDatos();
+        }
+
+        public void CargaCboDoctor()
+        {
+            try
+            {
+                cboDoctor.DisplayMember = "Doctor";
+                cboDoctor.ValueMember = "Cedula";
+
+                cboDoctor.DataSource = IApp.DoctorService.GetLista();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void CargaCboPaciente()
+        {
+            try
+            {
+                cboPaciente.DisplayMember = "Paciente";
+                cboPaciente.ValueMember = "Pasaporte";
+
+                cboPaciente.DataSource = IApp.PacienteService.GetLista();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void CargaCboServicio()
+        {
+            try
+            {
+                cboServicio.DisplayMember = "Servicio";
+                cboServicio.ValueMember = "IdServicio";
+
+                cboServicio.DataSource = IApp.ServicioService.GetLista();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+
     }
 }

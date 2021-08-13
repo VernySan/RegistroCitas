@@ -14,6 +14,7 @@ namespace BL
         DBEntity Delete(DoctorEntity entity);
         IEnumerable<DoctorEntity> Get();
         DoctorEntity GetById(DoctorEntity entity);
+        IEnumerable<DoctorEntity> GetLista();
         DBEntity Update(DoctorEntity entity);
     }
 
@@ -136,6 +137,19 @@ namespace BL
 
         }
 
+        public IEnumerable<DoctorEntity> GetLista()
+        {
+            try
+            {
+                var result = sql.Query<DoctorEntity>("DoctorListar");
 
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

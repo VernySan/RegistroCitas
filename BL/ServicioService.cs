@@ -14,6 +14,7 @@ namespace BL
         DBEntity Delete(ServicioEntity entity);
         IEnumerable<ServicioEntity> Get();
         ServicioEntity GetById(ServicioEntity entity);
+        IEnumerable<ServicioEntity> GetLista();
         DBEntity Update(ServicioEntity entity);
     }
 
@@ -127,6 +128,21 @@ namespace BL
                 throw;
             }
 
+        }
+
+        public IEnumerable<ServicioEntity> GetLista()
+        {
+            try
+            {
+                var result = sql.Query<ServicioEntity>("ServicioListar");
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
     }

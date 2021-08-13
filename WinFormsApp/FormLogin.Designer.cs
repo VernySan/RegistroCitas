@@ -59,7 +59,7 @@ namespace WinFormsApp
             this.Iniciar_Sesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Iniciar_Sesion.IconSize = 40;
             this.Iniciar_Sesion.Location = new System.Drawing.Point(340, 222);
-            this.Iniciar_Sesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Iniciar_Sesion.Margin = new System.Windows.Forms.Padding(4);
             this.Iniciar_Sesion.Name = "Iniciar_Sesion";
             this.Iniciar_Sesion.Size = new System.Drawing.Size(94, 55);
             this.Iniciar_Sesion.TabIndex = 3;
@@ -69,7 +69,7 @@ namespace WinFormsApp
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(256, 154);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(240, 31);
             this.txtPassword.TabIndex = 2;
@@ -88,7 +88,7 @@ namespace WinFormsApp
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(256, 75);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(240, 31);
             this.txtUsuario.TabIndex = 1;
@@ -113,7 +113,7 @@ namespace WinFormsApp
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 80;
             this.iconButton1.Location = new System.Drawing.Point(15, 49);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(206, 242);
             this.iconButton1.TabIndex = 7;
@@ -131,7 +131,7 @@ namespace WinFormsApp
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButton1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

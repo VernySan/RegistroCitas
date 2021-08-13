@@ -11,5 +11,6 @@ namespace Entity
         public int? IdHorario { get; set; }
         public string Inicio { get; set; }
         public string Fin { get; set; }
+        public string Horario { get; }
     }
 }

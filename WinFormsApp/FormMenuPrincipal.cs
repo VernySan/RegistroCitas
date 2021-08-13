@@ -79,5 +79,10 @@ namespace WinFormsApp
         {
             AbrirFormPrincipal(new FormPaciente());
         }
+
+        private void bCitas_Click(object sender, EventArgs e)
+        {
+            AbrirFormPrincipal(new FormCita());
+        }
     }
 }
