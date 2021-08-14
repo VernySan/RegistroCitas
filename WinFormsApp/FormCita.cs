@@ -56,17 +56,23 @@ namespace WinFormsApp
             try
             {
                 LimpiarDatos();
-
-
  
                     if (GridViewCita.SelectedRows.Count > 0)
                     {
                         var row = GridViewCita.SelectedRows[0];
 
                     txtIdHorario.Text = Convert.ToString(row.Cells["IdHorario"].Value);
+                    var sCita = Convert.ToString(row.Cells["IdCita"].Value);
 
+                    if (String.IsNullOrEmpty(sCita))
+                    {
+                        panelForm.Visible = true;
+                    } 
+                    else
+                    {
+                        MessageBox.Show("Ya existe una cita asignada en este horario");
+                    }
 
-                    panelForm.Visible = true;
                 }
                 else
                 {
@@ -103,18 +109,25 @@ namespace WinFormsApp
 
                 var IdSelected = GetSelectedRowGrid();
 
-                if (IdSelected.HasValue)
+                if (IdSelected.HasValue )
                 {
                     var result = IApp.CitaService.GetById(new CitaEntity()
                     { IdCita = IdSelected });
 
-                    txtIdCita.Text = result.IdCita.ToString();
-                    txtIdHorario.Text = result.IdHorario.ToString();
-                    cboDoctor.SelectedValue = result.IdDoctor;
-                    cboPaciente.SelectedValue = result.IdPaciente;
-                    cboServicio.SelectedValue = result.IdServicio;
+                    if (IdSelected != 0 )
+                    {
+                        txtIdCita.Text = result.IdCita.ToString();
+                        txtIdHorario.Text = result.IdHorario.ToString();
+                        cboDoctor.SelectedValue = result.IdDoctor;
+                        cboPaciente.SelectedValue = result.IdPaciente;
+                        cboServicio.SelectedValue = result.IdServicio;
 
-                    panelForm.Visible = true;
+                        panelForm.Visible = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se puede editar una cita sin asignar");
+                    }
                 }
                 else 
                 {

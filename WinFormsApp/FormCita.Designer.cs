@@ -110,6 +110,7 @@ namespace WinFormsApp
             this.txtIdHorario.Name = "txtIdHorario";
             this.txtIdHorario.Size = new System.Drawing.Size(155, 31);
             this.txtIdHorario.TabIndex = 14;
+            this.txtIdHorario.Visible = false;
             // 
             // label4
             // 
@@ -194,6 +195,7 @@ namespace WinFormsApp
             this.txtIdCita.Name = "txtIdCita";
             this.txtIdCita.Size = new System.Drawing.Size(155, 31);
             this.txtIdCita.TabIndex = 1;
+            this.txtIdCita.Visible = false;
             // 
             // label1
             // 
@@ -289,6 +291,7 @@ namespace WinFormsApp
             this.IdHorario.MinimumWidth = 6;
             this.IdHorario.Name = "IdHorario";
             this.IdHorario.ReadOnly = true;
+            this.IdHorario.Visible = false;
             this.IdHorario.Width = 125;
             // 
             // xFecha
