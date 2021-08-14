@@ -14,7 +14,6 @@ namespace BL
         DBEntity Delete(HorarioEntity entity);
         IEnumerable<HorarioEntity> Get();
         HorarioEntity GetById(HorarioEntity entity);
-        IEnumerable<HorarioEntity> GetLista();
         DBEntity Update(HorarioEntity entity);
     }
 
@@ -125,23 +124,6 @@ namespace BL
 
                 throw;
             }
-
-        }
-
-        public IEnumerable<HorarioEntity> GetLista()
-        {
-            try
-            {
-                var result = sql.Query<HorarioEntity>("HorarioListar");
-
-                return result;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
 
         }
 

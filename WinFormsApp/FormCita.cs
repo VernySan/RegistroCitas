@@ -57,12 +57,14 @@ namespace WinFormsApp
             {
                 LimpiarDatos();
 
-                var IdSelected = GetSelectedRowGridHorario();
 
-                if (IdSelected.HasValue)
-                {
+ 
+                    if (GridViewCita.SelectedRows.Count > 0)
+                    {
+                        var row = GridViewCita.SelectedRows[0];
 
-//                    txtIdHorario.Text = IdSelected.ToString;
+                    txtIdHorario.Text = Convert.ToString(row.Cells["IdHorario"].Value);
+
 
                     panelForm.Visible = true;
                 }
@@ -91,19 +93,6 @@ namespace WinFormsApp
             {
                 return null;
             }    
-        }
-
-        public int? GetSelectedRowGridHorario()
-        {
-            if (GridViewCita.SelectedRows.Count > 0)
-            {
-                var row = GridViewCita.SelectedRows[1];
-                return Convert.ToInt32(row.Cells["IdHorario"].Value);
-            }
-            else
-            {
-                return null;
-            }
         }
 
         private void BtnEditar_Click(object sender, EventArgs e)

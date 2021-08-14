@@ -94,7 +94,6 @@ namespace BL
             {
                 var result = sql.Execute("CitaInsertar", new
                 {
-                    entity.IdCita,
                     entity.Fecha,
                     entity.IdHorario,
                     entity.IdDoctor,

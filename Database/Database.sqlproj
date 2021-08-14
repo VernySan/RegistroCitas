@@ -102,7 +102,6 @@
     <Build Include="dbo\StoreProcedures\NacionalidadInsertar.sql" />
     <Build Include="dbo\StoreProcedures\NacionalidadObtener.sql" />
     <Build Include="dbo\Views\vCita.sql" />
-    <Build Include="dbo\StoreProcedures\HorarioListar.sql" />
     <Build Include="dbo\StoreProcedures\DoctorListar.sql" />
     <Build Include="dbo\StoreProcedures\PacienteListar.sql" />
     <Build Include="dbo\StoreProcedures\ServicioListar.sql" />
