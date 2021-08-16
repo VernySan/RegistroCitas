@@ -6,21 +6,31 @@ SET NOCOUNT ON
 
 	BEGIN TRANSACTION TRASA
 
-	BEGIN TRY
-		
-		INSERT INTO dbo.Nacionalidad 
-		(
-	      Nacionalidad 
-		)
-		VALUES
-		(
-	      @Nacionalidad 
-		)
+BEGIN TRY
 
-		COMMIT TRANSACTION TRASA
+	IF NOT EXISTS (SELECT * FROM dbo.Nacionalidad 
+					WHERE Nacionalidad = @Nacionalidad)
+
+		begin
+			INSERT INTO dbo.Nacionalidad 
+			(
+			  Nacionalidad 
+			)
+			VALUES
+			(
+			  @Nacionalidad 
+			)
+
+			COMMIT TRANSACTION TRASA
 		
 		SELECT 0 AS CodeError, '' AS MsgError
 
+		end
+		else
+		begin
+			SELECT 50001 AS CodeError, 'La Nacionalidad ya existe' AS MsgError
+			ROLLBACK TRANSACTION TRASA
+		end
 	END TRY
 
 	BEGIN CATCH

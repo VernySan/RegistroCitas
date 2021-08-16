@@ -6,21 +6,31 @@ SET NOCOUNT ON
 
 	BEGIN TRANSACTION TRASA
 
-	BEGIN TRY
-		
-		INSERT INTO dbo.Especialidad 
-		(
-	      Especialidad 
-		)
-		VALUES
-		(
-	      @Especialidad 
-		)
+BEGIN TRY
 
-		COMMIT TRANSACTION TRASA
+	IF NOT EXISTS (SELECT * FROM dbo.Especialidad 
+					WHERE Especialidad = @Especialidad)
+
+		begin
+			INSERT INTO dbo.Especialidad 
+			(
+			  Especialidad 
+			)
+			VALUES
+			(
+			  @Especialidad 
+			)
+
+			COMMIT TRANSACTION TRASA
 		
 		SELECT 0 AS CodeError, '' AS MsgError
 
+		end
+		else
+		begin
+			SELECT 50001 AS CodeError, 'La especialidad ya existe' AS MsgError
+			ROLLBACK TRANSACTION TRASA
+		end
 	END TRY
 
 	BEGIN CATCH
