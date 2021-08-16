@@ -43,34 +43,38 @@ namespace WinFormsApp
             // 
             // txtComfirmarContraseña
             // 
-            this.txtComfirmarContraseña.Location = new System.Drawing.Point(241, 276);
+            this.txtComfirmarContraseña.Location = new System.Drawing.Point(301, 345);
+            this.txtComfirmarContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtComfirmarContraseña.Name = "txtComfirmarContraseña";
-            this.txtComfirmarContraseña.Size = new System.Drawing.Size(193, 27);
-            this.txtComfirmarContraseña.TabIndex = 18;
+            this.txtComfirmarContraseña.Size = new System.Drawing.Size(240, 31);
+            this.txtComfirmarContraseña.TabIndex = 4;
             this.txtComfirmarContraseña.UseSystemPasswordChar = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(241, 253);
+            this.label4.Location = new System.Drawing.Point(301, 316);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 20);
+            this.label4.Size = new System.Drawing.Size(185, 25);
             this.label4.TabIndex = 23;
             this.label4.Text = "Confirmar Contraseña";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(241, 147);
+            this.txtNombre.Location = new System.Drawing.Point(301, 184);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(193, 27);
-            this.txtNombre.TabIndex = 16;
+            this.txtNombre.Size = new System.Drawing.Size(240, 31);
+            this.txtNombre.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(241, 124);
+            this.label3.Location = new System.Drawing.Point(301, 155);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 20);
+            this.label3.Size = new System.Drawing.Size(83, 25);
             this.label3.TabIndex = 22;
             this.label3.Text = "Nombre ";
             // 
@@ -82,43 +86,48 @@ namespace WinFormsApp
             this.Registrar.IconColor = System.Drawing.Color.White;
             this.Registrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Registrar.IconSize = 40;
-            this.Registrar.Location = new System.Drawing.Point(359, 318);
+            this.Registrar.Location = new System.Drawing.Point(449, 398);
+            this.Registrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Registrar.Name = "Registrar";
-            this.Registrar.Size = new System.Drawing.Size(75, 44);
-            this.Registrar.TabIndex = 19;
+            this.Registrar.Size = new System.Drawing.Size(94, 55);
+            this.Registrar.TabIndex = 5;
             this.Registrar.UseVisualStyleBackColor = false;
             this.Registrar.Click += new System.EventHandler(this.Registrar_Click);
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(241, 214);
+            this.txtPassword.Location = new System.Drawing.Point(301, 268);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(193, 27);
-            this.txtPassword.TabIndex = 17;
+            this.txtPassword.Size = new System.Drawing.Size(240, 31);
+            this.txtPassword.TabIndex = 3;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(241, 191);
+            this.label2.Location = new System.Drawing.Point(301, 239);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 20);
+            this.label2.Size = new System.Drawing.Size(101, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "Contraseña";
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(241, 83);
+            this.txtUsuario.Location = new System.Drawing.Point(301, 104);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(193, 27);
-            this.txtUsuario.TabIndex = 14;
+            this.txtUsuario.Size = new System.Drawing.Size(240, 31);
+            this.txtUsuario.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(241, 60);
+            this.label1.Location = new System.Drawing.Point(301, 75);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.Size = new System.Drawing.Size(72, 25);
             this.label1.TabIndex = 20;
             this.label1.Text = "Usuario";
             // 
@@ -131,17 +140,18 @@ namespace WinFormsApp
             this.iconButton1.IconColor = System.Drawing.Color.DarkCyan;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 80;
-            this.iconButton1.Location = new System.Drawing.Point(23, 55);
+            this.iconButton1.Location = new System.Drawing.Point(29, 69);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(188, 307);
+            this.iconButton1.Size = new System.Drawing.Size(235, 384);
             this.iconButton1.TabIndex = 15;
             this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // FormRegistrarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 409);
+            this.ClientSize = new System.Drawing.Size(599, 511);
             this.Controls.Add(this.txtComfirmarContraseña);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtNombre);
@@ -152,6 +162,7 @@ namespace WinFormsApp
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButton1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormRegistrarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Usuario";
