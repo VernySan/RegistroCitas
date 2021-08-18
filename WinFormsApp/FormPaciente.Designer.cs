@@ -45,6 +45,7 @@ namespace WinFormsApp
             this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelForm = new System.Windows.Forms.Panel();
+            this.nPasaporte = new System.Windows.Forms.NumericUpDown();
             this.nCedula = new System.Windows.Forms.NumericUpDown();
             this.txtEnfermedades = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -74,12 +75,11 @@ namespace WinFormsApp
             this.BtnNuevo = new FontAwesome.Sharp.IconButton();
             this.BtnEditar = new FontAwesome.Sharp.IconButton();
             this.BtnEliminar = new FontAwesome.Sharp.IconButton();
-            this.nPasaporte = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewPaciente)).BeginInit();
             this.panelForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nPasaporte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nCedula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nTelefono)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nPasaporte)).BeginInit();
             this.SuspendLayout();
             // 
             // GridViewPaciente
@@ -100,13 +100,13 @@ namespace WinFormsApp
             this.Alergias,
             this.Direccion,
             this.Estado});
-            this.GridViewPaciente.Location = new System.Drawing.Point(39, 15);
-            this.GridViewPaciente.Margin = new System.Windows.Forms.Padding(4);
+            this.GridViewPaciente.Location = new System.Drawing.Point(27, 9);
+            this.GridViewPaciente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GridViewPaciente.Name = "GridViewPaciente";
             this.GridViewPaciente.ReadOnly = true;
             this.GridViewPaciente.RowHeadersWidth = 51;
             this.GridViewPaciente.RowTemplate.Height = 29;
-            this.GridViewPaciente.Size = new System.Drawing.Size(634, 568);
+            this.GridViewPaciente.Size = new System.Drawing.Size(444, 341);
             this.GridViewPaciente.TabIndex = 0;
             // 
             // Pasaporte
@@ -265,116 +265,127 @@ namespace WinFormsApp
             this.panelForm.Controls.Add(this.txtNombre);
             this.panelForm.Controls.Add(this.labelDescripcion);
             this.panelForm.Controls.Add(this.label1);
-            this.panelForm.Location = new System.Drawing.Point(681, 15);
-            this.panelForm.Margin = new System.Windows.Forms.Padding(4);
+            this.panelForm.Location = new System.Drawing.Point(477, 9);
+            this.panelForm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(651, 555);
+            this.panelForm.Size = new System.Drawing.Size(456, 394);
             this.panelForm.TabIndex = 1;
             this.panelForm.Visible = false;
             // 
+            // nPasaporte
+            // 
+            this.nPasaporte.Location = new System.Drawing.Point(162, 28);
+            this.nPasaporte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nPasaporte.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
+            this.nPasaporte.Name = "nPasaporte";
+            this.nPasaporte.Size = new System.Drawing.Size(126, 23);
+            this.nPasaporte.TabIndex = 1;
+            this.nPasaporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // nCedula
             // 
-            this.nCedula.Location = new System.Drawing.Point(232, 89);
+            this.nCedula.Location = new System.Drawing.Point(162, 53);
+            this.nCedula.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nCedula.Maximum = new decimal(new int[] {
             999999999,
             0,
             0,
             0});
             this.nCedula.Name = "nCedula";
-            this.nCedula.Size = new System.Drawing.Size(180, 31);
+            this.nCedula.Size = new System.Drawing.Size(126, 23);
             this.nCedula.TabIndex = 2;
             this.nCedula.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtEnfermedades
             // 
-            this.txtEnfermedades.Location = new System.Drawing.Point(232, 421);
-            this.txtEnfermedades.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEnfermedades.Location = new System.Drawing.Point(162, 253);
+            this.txtEnfermedades.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEnfermedades.Name = "txtEnfermedades";
-            this.txtEnfermedades.Size = new System.Drawing.Size(376, 31);
+            this.txtEnfermedades.Size = new System.Drawing.Size(264, 23);
             this.txtEnfermedades.TabIndex = 10;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(54, 430);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(38, 258);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(129, 25);
+            this.label11.Size = new System.Drawing.Size(85, 15);
             this.label11.TabIndex = 27;
             this.label11.Text = "Enfermedades:";
             // 
             // txtAlergias
             // 
-            this.txtAlergias.Location = new System.Drawing.Point(232, 382);
-            this.txtAlergias.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAlergias.Location = new System.Drawing.Point(162, 229);
+            this.txtAlergias.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAlergias.Name = "txtAlergias";
-            this.txtAlergias.Size = new System.Drawing.Size(376, 31);
+            this.txtAlergias.Size = new System.Drawing.Size(264, 23);
             this.txtAlergias.TabIndex = 9;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(54, 391);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(38, 235);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 25);
+            this.label10.Size = new System.Drawing.Size(52, 15);
             this.label10.TabIndex = 25;
             this.label10.Text = "Alergias:";
             // 
             // dFechaNacimiento
             // 
             this.dFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dFechaNacimiento.Location = new System.Drawing.Point(232, 303);
+            this.dFechaNacimiento.Location = new System.Drawing.Point(162, 182);
+            this.dFechaNacimiento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dFechaNacimiento.Name = "dFechaNacimiento";
-            this.dFechaNacimiento.Size = new System.Drawing.Size(300, 31);
+            this.dFechaNacimiento.Size = new System.Drawing.Size(211, 23);
             this.dFechaNacimiento.TabIndex = 7;
             this.dFechaNacimiento.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(232, 460);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDireccion.Location = new System.Drawing.Point(162, 276);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(376, 31);
+            this.txtDireccion.Size = new System.Drawing.Size(264, 23);
             this.txtDireccion.TabIndex = 11;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 469);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(38, 281);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 25);
+            this.label5.Size = new System.Drawing.Size(60, 15);
             this.label5.TabIndex = 11;
             this.label5.Text = "Direccion:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 309);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(22, 185);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(181, 25);
+            this.label9.Size = new System.Drawing.Size(122, 15);
             this.label9.TabIndex = 22;
             this.label9.Text = "Fecha de Nacimiento:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(60, 91);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(42, 55);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(70, 25);
+            this.label8.Size = new System.Drawing.Size(47, 15);
             this.label8.TabIndex = 21;
             this.label8.Text = "Cédula:";
             // 
             // chckGuardar
             // 
             this.chckGuardar.AutoSize = true;
-            this.chckGuardar.Location = new System.Drawing.Point(557, 46);
-            this.chckGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.chckGuardar.Location = new System.Drawing.Point(390, 28);
+            this.chckGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chckGuardar.Name = "chckGuardar";
-            this.chckGuardar.Size = new System.Drawing.Size(22, 21);
+            this.chckGuardar.Size = new System.Drawing.Size(15, 14);
             this.chckGuardar.TabIndex = 19;
             this.chckGuardar.UseVisualStyleBackColor = true;
             this.chckGuardar.Visible = false;
@@ -382,42 +393,41 @@ namespace WinFormsApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(60, 52);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(42, 31);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 25);
+            this.label7.Size = new System.Drawing.Size(62, 15);
             this.label7.TabIndex = 18;
             this.label7.Text = "Pasaporte:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(60, 347);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(42, 208);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 25);
+            this.label6.Size = new System.Drawing.Size(55, 15);
             this.label6.TabIndex = 17;
             this.label6.Text = "Telefono:";
             // 
             // cboNacionalidad
             // 
             this.cboNacionalidad.FormattingEnabled = true;
-            this.cboNacionalidad.Location = new System.Drawing.Point(232, 254);
-            this.cboNacionalidad.Margin = new System.Windows.Forms.Padding(4);
+            this.cboNacionalidad.Location = new System.Drawing.Point(162, 152);
+            this.cboNacionalidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboNacionalidad.Name = "cboNacionalidad";
-            this.cboNacionalidad.Size = new System.Drawing.Size(376, 33);
+            this.cboNacionalidad.Size = new System.Drawing.Size(264, 23);
             this.cboNacionalidad.TabIndex = 6;
             // 
             // nTelefono
             // 
-            this.nTelefono.Location = new System.Drawing.Point(232, 341);
+            this.nTelefono.Location = new System.Drawing.Point(162, 205);
+            this.nTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nTelefono.Maximum = new decimal(new int[] {
             99999999,
             0,
             0,
             0});
             this.nTelefono.Name = "nTelefono";
-            this.nTelefono.Size = new System.Drawing.Size(180, 31);
+            this.nTelefono.Size = new System.Drawing.Size(126, 23);
             this.nTelefono.TabIndex = 8;
             this.nTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -426,66 +436,62 @@ namespace WinFormsApp
             this.chckEstado.AutoSize = true;
             this.chckEstado.Checked = true;
             this.chckEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chckEstado.Location = new System.Drawing.Point(232, 515);
-            this.chckEstado.Margin = new System.Windows.Forms.Padding(4);
+            this.chckEstado.Location = new System.Drawing.Point(162, 309);
+            this.chckEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chckEstado.Name = "chckEstado";
-            this.chckEstado.Size = new System.Drawing.Size(22, 21);
+            this.chckEstado.Size = new System.Drawing.Size(15, 14);
             this.chckEstado.TabIndex = 12;
             this.chckEstado.UseVisualStyleBackColor = true;
             // 
             // labelEstado
             // 
             this.labelEstado.AutoSize = true;
-            this.labelEstado.Location = new System.Drawing.Point(54, 511);
-            this.labelEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelEstado.Location = new System.Drawing.Point(38, 307);
             this.labelEstado.Name = "labelEstado";
-            this.labelEstado.Size = new System.Drawing.Size(70, 25);
+            this.labelEstado.Size = new System.Drawing.Size(45, 15);
             this.labelEstado.TabIndex = 13;
             this.labelEstado.Text = "Estado:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 262);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(42, 157);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 25);
+            this.label4.Size = new System.Drawing.Size(80, 15);
             this.label4.TabIndex = 5;
             this.label4.Text = "Nacionalidad:";
             // 
             // txtSegundoApellido
             // 
-            this.txtSegundoApellido.Location = new System.Drawing.Point(232, 208);
-            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSegundoApellido.Location = new System.Drawing.Point(162, 125);
+            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
-            this.txtSegundoApellido.Size = new System.Drawing.Size(376, 31);
+            this.txtSegundoApellido.Size = new System.Drawing.Size(264, 23);
             this.txtSegundoApellido.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 217);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(38, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 25);
+            this.label3.Size = new System.Drawing.Size(104, 15);
             this.label3.TabIndex = 9;
             this.label3.Text = "Segundo Apellido:";
             // 
             // txtPrimerApellido
             // 
-            this.txtPrimerApellido.Location = new System.Drawing.Point(232, 169);
-            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrimerApellido.Location = new System.Drawing.Point(162, 101);
+            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
-            this.txtPrimerApellido.Size = new System.Drawing.Size(376, 31);
+            this.txtPrimerApellido.Size = new System.Drawing.Size(264, 23);
             this.txtPrimerApellido.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(54, 178);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(38, 107);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 25);
+            this.label2.Size = new System.Drawing.Size(92, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "Primer Apellido:";
             // 
@@ -498,10 +504,10 @@ namespace WinFormsApp
             this.BtnGuardar.IconColor = System.Drawing.Color.White;
             this.BtnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnGuardar.IconSize = 32;
-            this.BtnGuardar.Location = new System.Drawing.Point(468, 495);
-            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnGuardar.Location = new System.Drawing.Point(213, 343);
+            this.BtnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(166, 56);
+            this.BtnGuardar.Size = new System.Drawing.Size(116, 34);
             this.BtnGuardar.TabIndex = 13;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -510,19 +516,18 @@ namespace WinFormsApp
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(232, 130);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Location = new System.Drawing.Point(162, 78);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(376, 31);
+            this.txtNombre.Size = new System.Drawing.Size(264, 23);
             this.txtNombre.TabIndex = 3;
             // 
             // labelDescripcion
             // 
             this.labelDescripcion.AutoSize = true;
-            this.labelDescripcion.Location = new System.Drawing.Point(54, 139);
-            this.labelDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDescripcion.Location = new System.Drawing.Point(38, 83);
             this.labelDescripcion.Name = "labelDescripcion";
-            this.labelDescripcion.Size = new System.Drawing.Size(82, 25);
+            this.labelDescripcion.Size = new System.Drawing.Size(54, 15);
             this.labelDescripcion.TabIndex = 2;
             this.labelDescripcion.Text = "Nombre:";
             // 
@@ -530,10 +535,9 @@ namespace WinFormsApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(4, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 38);
+            this.label1.Size = new System.Drawing.Size(91, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Pacientes";
             // 
@@ -546,10 +550,10 @@ namespace WinFormsApp
             this.BtnNuevo.IconColor = System.Drawing.Color.White;
             this.BtnNuevo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnNuevo.IconSize = 32;
-            this.BtnNuevo.Location = new System.Drawing.Point(49, 618);
-            this.BtnNuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnNuevo.Location = new System.Drawing.Point(34, 371);
+            this.BtnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnNuevo.Name = "BtnNuevo";
-            this.BtnNuevo.Size = new System.Drawing.Size(122, 54);
+            this.BtnNuevo.Size = new System.Drawing.Size(85, 32);
             this.BtnNuevo.TabIndex = 2;
             this.BtnNuevo.Text = "Nuevo";
             this.BtnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -565,10 +569,10 @@ namespace WinFormsApp
             this.BtnEditar.IconColor = System.Drawing.Color.White;
             this.BtnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEditar.IconSize = 32;
-            this.BtnEditar.Location = new System.Drawing.Point(191, 618);
-            this.BtnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnEditar.Location = new System.Drawing.Point(134, 371);
+            this.BtnEditar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnEditar.Name = "BtnEditar";
-            this.BtnEditar.Size = new System.Drawing.Size(118, 54);
+            this.BtnEditar.Size = new System.Drawing.Size(83, 32);
             this.BtnEditar.TabIndex = 3;
             this.BtnEditar.Text = "Editar";
             this.BtnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -584,40 +588,27 @@ namespace WinFormsApp
             this.BtnEliminar.IconColor = System.Drawing.Color.White;
             this.BtnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BtnEliminar.IconSize = 32;
-            this.BtnEliminar.Location = new System.Drawing.Point(330, 618);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.BtnEliminar.Location = new System.Drawing.Point(231, 371);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(144, 54);
+            this.BtnEliminar.Size = new System.Drawing.Size(101, 32);
             this.BtnEliminar.TabIndex = 4;
             this.BtnEliminar.Text = "Eliminar";
             this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEliminar.UseVisualStyleBackColor = false;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
-            // nPasaporte
-            // 
-            this.nPasaporte.Location = new System.Drawing.Point(232, 46);
-            this.nPasaporte.Maximum = new decimal(new int[] {
-            999999999,
-            0,
-            0,
-            0});
-            this.nPasaporte.Name = "nPasaporte";
-            this.nPasaporte.Size = new System.Drawing.Size(180, 31);
-            this.nPasaporte.TabIndex = 1;
-            this.nPasaporte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // FormPaciente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1380, 716);
+            this.ClientSize = new System.Drawing.Size(966, 430);
             this.Controls.Add(this.GridViewPaciente);
             this.Controls.Add(this.BtnEliminar);
             this.Controls.Add(this.BtnEditar);
             this.Controls.Add(this.BtnNuevo);
             this.Controls.Add(this.panelForm);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormPaciente";
             this.Text = "Paciente";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -625,9 +616,9 @@ namespace WinFormsApp
             ((System.ComponentModel.ISupportInitialize)(this.GridViewPaciente)).EndInit();
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nPasaporte)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nCedula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nTelefono)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nPasaporte)).EndInit();
             this.ResumeLayout(false);
 
         }
