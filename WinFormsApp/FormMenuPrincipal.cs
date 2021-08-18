@@ -84,5 +84,10 @@ namespace WinFormsApp
         {
             AbrirFormPrincipal(new FormCita());
         }
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            AbrirFormPrincipal(new FormCitaListar());
+        }
     }
 }

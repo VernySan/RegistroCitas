@@ -16,6 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FormCitaListar.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -28,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="FormCitaListar.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="FormCita.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

@@ -3,7 +3,6 @@
     @Fecha date=NULL
 AS BEGIN
 	SET NOCOUNT ON
-	SET NOCOUNT ON
 
 	if   IsNull(@IdCita,-1)=-1 --Consulta por fecha
 	  begin

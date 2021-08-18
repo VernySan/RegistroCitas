@@ -19,5 +19,11 @@ namespace Entity
         public String Paciente { get; }
         public int IdServicio { get; set; }
         public String Servicio { get; }
+        public String Especialidad { get; }
+        public String Cedula { get; }
+        public String Telefono { get; }
+        public String Consulta { get; }
+        public String Procedimiento { get; }
+        public String Precio { get; }
     }
 }
